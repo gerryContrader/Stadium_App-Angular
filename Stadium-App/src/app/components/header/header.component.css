@@ -1,0 +1,41 @@
+#navbarSupportedContent{
+  display: flex !important;
+  justify-content: end !important;
+  margin-right: 3rem !important;
+
+}
+
+#cerca{
+
+
+
+  background-color: blue !important;
+  color: blue !important;
+}
+#search{
+  border: white !important;
+  width: 10rem !important;;
+  margin-right: 2rem !important;
+}
+
+
+a{
+  color: white !important;
+}
+
+a:hover{
+  color: white !important;
+}
+
+a:active {
+  color: white !important;
+}
+
+ul{
+  background-color: rgb(23, 23, 92) !important;
+}
+
+
+
+
+
