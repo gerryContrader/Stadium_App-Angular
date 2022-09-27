@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ForbiddenDirective } from './directives/forbidden.directive';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,14 +17,13 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-
+    ForbiddenDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
