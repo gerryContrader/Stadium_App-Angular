@@ -1,1 +1,38 @@
-<p>home works!</p>
+<app-header></app-header>
+<div class="img">
+</div>
+  <div id="container">
+
+    <div></div>
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Città
+  </button>
+  <ul class="dropdown-menu">
+    <li><button class="dropdown-item" type="button">Roma</button></li>
+    <li><button class="dropdown-item" type="button">Milano</button></li>
+    <li><button class="dropdown-item" type="button">Napoli</button></li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Categoria
+  </button>
+  <ul class="dropdown-menu">
+    <li><button class="dropdown-item" type="button">Serie A</button></li>
+    <li><button class="dropdown-item" type="button">Serie B</button></li>
+    <li><button class="dropdown-item" type="button">Serie C</button></li>
+  </ul>
+</div>
+<div><input class="btn btn-secondary dropdown-toggle" type="date" placeholder="Dal giorno"> </div>
+
+  <div>
+    <input class="btn btn-secondary dropdown-toggle" type="date" placeholder="Al giorno"></div>
+</div>
+
+<div *ngIf="team.length > 0" id="teams">
+<ul style="font-weight:bold ; margin-top:1.6rem; " *ngFor="let user of team" class="list-group">
+  <li id="listteam" style="display:flex; justify-content:space-around;" class="list-group-item">{{user}}<p>Stadium <br><span>nome stadio</span></p><p style="color: green ;"> Disponibile</p> <span class="btnlist"><button type="button" class="btn btn-danger">Vai al dettaglio</button> <button type="button" class="btn btn-danger">Acquista</button></span></li>
+
+</ul>
+</div>

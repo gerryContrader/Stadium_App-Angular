@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+   team: string[] = ['Roma-Torino', 'juventus-Napoli', 'Napoli-Benevent','Lazio-Cagliari'];
+   stadio: string[] = ['olimpico', 'juventus Stadium', 'maradona','olimpico'];
   constructor() { }
 
   ngOnInit(): void {

@@ -1,7 +1,9 @@
 #navbarSupportedContent{
+
+
   display: flex !important;
   justify-content: end !important;
-  margin-right: 3rem !important;
+  margin-right: 6.5rem !important;
 
 }
 
@@ -13,9 +15,10 @@
   color: blue !important;
 }
 #search{
+
   border: white !important;
-  width: 10rem !important;;
-  margin-right: 2rem !important;
+
+  margin-right: 5rem !important;
 }
 
 
