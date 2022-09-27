@@ -27,8 +27,8 @@
                                 <label class="form-label" for="typePasswordX" style="float:left">Password</label>
                                 <input type="password" id="typePasswordX" class="form-control" name="password"
                                     style="border-radius: 1rem; border-color: black;" placeholder="****************"
-                                    [(ngModel)]="password" #p="ngModel" required
-                                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$" />
+                                    [(ngModel)]="password" #p="ngModel" required/>
+                                   <!-- COPIA DA BLOCCO NOTE CLAUDIO QUESTA RIGA -->
                             </div>
                             <div *ngIf="(p.touched || f.submitted ) && p.invalid">
                                 <p *ngIf="p.hasError('required')" class="error">Campo Obbligatorio
