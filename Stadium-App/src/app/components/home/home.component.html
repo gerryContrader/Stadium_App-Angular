@@ -44,7 +44,7 @@
         <th scope="col">Elimina</th>
       </tr>
     </thead>
-    <tbody *ngFor="let event of events">
+    <tbody *ngFor="let event of event">
       <tr>
         <th scope="row">{{event.id}}</th>
         <td>{{event.userId}}</td>
@@ -52,8 +52,8 @@
         <td>{{event.stadiumName}}</td>
         <td>{{event.eventDate}}</td>
         <td>{{event.placesAvailable}}</td>
-        <td><button class="btn btn-success">Modifica</button></td>
-        <td><button class="btn btn-danger">Elimina</button></td>
+        <td><button class="btn btn-success" >Modifica</button></td>
+        <td><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
       </tr>
     </tbody>
   </table>
