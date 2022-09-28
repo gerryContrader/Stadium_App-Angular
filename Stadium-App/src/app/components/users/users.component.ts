@@ -18,9 +18,6 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers();
     this.getLocalStorage();
-
-
-
   }
 
   getLocalStorage(){

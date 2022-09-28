@@ -3,7 +3,8 @@ import { AbstractService } from './abstract.service';
 import { HttpClient } from '@angular/common/http';
 import { EventDTO } from 'src/models/eventdto';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environment } from 'src/environments/environment';
+
 
 /**
  * I service sono decorati da @Injectable. 
@@ -22,6 +23,17 @@ export class EventService extends AbstractService<EventDTO>{
   constructor(http: HttpClient) {
     super(http);
     this.type = 'event';
-
   }
+
+   public eventRead(id: number): Observable<EventDTO> {
+    return this.http.get<EventDTO>(`${environment.APIEndpoint}` + `${this.type}` + `/${id}`)
+  }
+
+  // public getPreview(id: string): Observable<MoviePreview> {
+  //   return this._http.get<IMoviePreview>(`${environment.api.url}Title/${environment.key}/${id}`).pipe(
+  //     map(preview => this._objToModel(preview))
+  //   );
+  // }
+}
+
 }
