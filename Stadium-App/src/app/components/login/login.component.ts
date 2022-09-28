@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginDTO } from 'src/models/logindto';
-import { UserService } from 'src/app/services/user-service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +16,7 @@ export class LoginComponent implements OnInit {
 
   loginDTO!: LoginDTO;
 
-
   constructor(private router: Router, private service: UserService) { }
-
 
   public handleSubmit(form: NgForm): void {
     if (form.invalid) {
