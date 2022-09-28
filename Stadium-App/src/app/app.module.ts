@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UsersComponent } from './components/users/users.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Page404Component } from './components/page404/page404.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 
 
@@ -30,6 +31,7 @@ import { RegisterComponent } from './components/register/register.component';
     UsersComponent,
     FooterComponent,
     Page404Component,
+    ProfileComponent,
     RegisterComponent,
 
   ],
