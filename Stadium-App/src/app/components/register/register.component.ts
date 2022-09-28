@@ -12,8 +12,7 @@ export class RegisterComponent implements OnInit {
   public username!: string;
   public password!: string;
   public email!: string;
-  public name!: string;
-  public surname!: string;
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -23,7 +22,7 @@ export class RegisterComponent implements OnInit {
     if (form.invalid) {
       return;
     }else{
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
 
     }
   }

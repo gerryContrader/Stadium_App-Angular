@@ -17,7 +17,7 @@ const routes: Routes = [
   { path:'404', component: Page404Component },
   { path:'register', component: RegisterComponent },
   { path:'users', component: UsersComponent },
-  { path: '**', redirectTo:'/404', pathMatch: 'full' },
+  // { path: '**', redirectTo:'/404', pathMatch: 'full' },
   { path: '', redirectTo:'/login', pathMatch: 'full' },
 ];
 
