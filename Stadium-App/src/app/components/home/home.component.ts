@@ -13,20 +13,21 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private router: Router, private service: EventService) { }
-
   
-  user!: UserDTO;
-
-  public events!: EventDTO[];
-  // userinsert: UserDTO = new UserDTO();
+  public user!: UserDTO;
+  public event!: EventDTO[];
 
   ngOnInit(): void {
-    // this.user = JSON.parse(localStorage.getItem('currentUser'));
-
-    this.service.getAll().subscribe(events => {
-      console.log(events);
-      this.events = events;
+    this.user = JSON.parse(localStorage.getItem('user') as string);
+    this.service.getAll().subscribe(event => {
+      console.log(event);
+      this.event = event;
     });
   }
+
+  delete(event: EventDTO) {
+    this.service.delete(event.id).subscribe(() => this.service.getAll());
+  }
+
 
 }
