@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EventService } from 'src/app/services/event.service';
+import { EventDTO } from 'src/models/eventdto';
+import { UserDTO } from 'src/models/userdto';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-   team: string[] = ['Roma-Torino', 'juventus-Napoli', 'Napoli-Benevent','Lazio-Cagliari'];
-   stadio: string[] = ['olimpico', 'juventus Stadium', 'maradona','olimpico'];
-  constructor() { }
+
+  constructor(private router: Router, private service: EventService) { }
+
+  
+  user!: UserDTO;
+
+  public events!: EventDTO[];
+  // userinsert: UserDTO = new UserDTO();
 
   ngOnInit(): void {
+    // this.user = JSON.parse(localStorage.getItem('currentUser'));
+
+    this.service.getAll().subscribe(events => {
+      console.log(events);
+      this.events = events;
+    });
   }
 
 }

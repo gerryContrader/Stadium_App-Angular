@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AbstractService } from './abstract-service';
-import { UserDTO } from 'src/models/userdto';
+import { AbstractService } from './abstract.service';
 import { HttpClient } from '@angular/common/http';
-import { LoginDTO } from 'src/models/logindto';
+import { EventDTO } from 'src/models/eventdto';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -18,15 +17,11 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService extends AbstractService<UserDTO>{
+export class EventService extends AbstractService<EventDTO>{
 
   constructor(http: HttpClient) {
     super(http);
-    this.type = 'user';
-  }
+    this.type = 'event';
 
-  login(loginDTO: LoginDTO): Observable<UserDTO> {
-    return this.http.post<any>(environment.APIEndpoint + this.type + '/login', loginDTO)
   }
-
 }
