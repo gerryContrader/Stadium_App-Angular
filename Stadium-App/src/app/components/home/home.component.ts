@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   public event!: EventDTO[];
 
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('user') as string);
+    this.user = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getAll().subscribe(event => {
       console.log(event);
       this.event = event;

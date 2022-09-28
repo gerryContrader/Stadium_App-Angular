@@ -10,11 +10,22 @@ import { UserDTO } from 'src/models/userdto';
 export class UsersComponent implements OnInit {
   users!: UserDTO[];
   usertoinsert: UserDTO = new UserDTO();
+  user: string = "";
+
   /* edit: boolean = false; */
   constructor(private service: UserService) { }
 
   ngOnInit(): void {
     this.getUsers();
+    this.getLocalStorage();
+
+
+
+  }
+
+  getLocalStorage(){
+    var user= JSON.parse(localStorage.getItem('currentUser') as string);
+    console.log(user.username);
   }
 
   switchEdit(u: UserDTO) {

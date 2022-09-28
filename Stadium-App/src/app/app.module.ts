@@ -10,11 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ForbiddenDirective } from './directives/forbidden.directive';
 import { HeaderComponent } from './components/header/header.component';
-import { UsersComponent } from './components/users/users.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UsersComponent } from './components/users/users.component';
+import { EditEventComponent } from './components/edit-event/edit-event.component';
+
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { RegisterComponent } from './components/register/register.component';
     Page404Component,
     ProfileComponent,
     RegisterComponent,
+    EditEventComponent,
 
   ],
   imports: [
