@@ -1,6 +1,9 @@
 <app-header></app-header>
-
-<div class="insert"><tr>
+<div id="image">
+  ciao
+</div>
+<div class=" card"   style="margin-top: 2rem; width: 60rem; text-align: center;align-items: center;margin-left: 15rem;">
+<div class="insert card-body " style="width: auto; padding: auto; text-align: center;"><tr>
   <td>
     <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="username" [(ngModel)]="usertoinsert.username">
   </td>
@@ -20,13 +23,13 @@
     <button class="btn btn-info" (click)="clear()">Clear</button>
   </td>
 </tr></div>
-
+</div>
 <div  id="user">
   <ul style="font-weight:bold ; margin-top:1.6rem; " *ngFor="let user of users" class="list-group">
     <li  class="list-group-item">ID:{{user.id}}    Username:{{user.username}}    Usertype:{{user.usertype}}   Password:{{user.password}} <span class="btnuser"><button (click)="switchEdit(user)" type="button" class="btn btn-success">Edit</button><button  type="button" (click)="delete(user)" class="btn btn-danger">Elimina</button><button type="button" class="btn btn-info">Info</button></span></li>
 
 
-    <div >
+    <div>
     <td *ngIf="user.editing == true">
       Username:<input [(ngModel)]="user.username">Password:<input style="margin-left:1.3rem ;" [(ngModel)]="user.password"><button style="margin-left:1.5rem ;" class="btn btn-info" (click)=update(user)>Save</button>
     </td>

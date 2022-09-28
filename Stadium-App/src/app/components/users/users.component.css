@@ -13,10 +13,18 @@ app-header::after {
 .btnuser button {
   margin-right: 1.5rem !important;
 }
+#image{
+  background-position: center !important;
+  height: 15rem !important;;
+  background-image: url("../../../assets/football-stadium-gdff8a6771_1920.jpg");
 
+}
 #user {
   margin-top: 6rem !important;;
   padding: 0 6rem !important;
+}
+.card{
+  background-color: rgba(227, 227, 227, 0.778) !important;
 }
 
 #user ul li{
