@@ -14,11 +14,8 @@ import { UsersComponent } from './components/users/users.component';
 import { UserpageComponent } from './components/users/userpage/userpage.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Page404Component } from './components/page404/page404.component';
-<<<<<<< HEAD
 import { ProfileComponent } from './components/profile/profile.component';
-=======
 import { RegisterComponent } from './components/register/register.component';
->>>>>>> 69e5a29a3fc64f6d5e40874177db05f958bd3407
 
 
 @NgModule({
@@ -35,11 +32,8 @@ import { RegisterComponent } from './components/register/register.component';
     UserpageComponent,
     FooterComponent,
     Page404Component,
-<<<<<<< HEAD
     ProfileComponent,
-=======
     RegisterComponent,
->>>>>>> 69e5a29a3fc64f6d5e40874177db05f958bd3407
 
   ],
   imports: [
