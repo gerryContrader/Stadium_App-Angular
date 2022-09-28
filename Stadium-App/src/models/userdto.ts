@@ -4,7 +4,7 @@ export class UserDTO {
     public usertype!: string;
     public password!: string;
     public address!: string;
-    public phoneNumber!: number;
+    public phone_number!: string;
     public email!: string;
     public name!: string;
     public surname!: string;
