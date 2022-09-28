@@ -14,8 +14,7 @@
                               <label class="form-label" for="typeEmailX" style="float:left">Username</label>
                               <input type="text" id="typeEmailX" class="form-control" name="username"
                                   style="border-radius: 1rem; border-color: black;" placeholder="insert username"
-                                  [(ngModel)]="username" #u="ngModel"
-                                  [appForbidden]="['porcoDio', 'porcaMadonna', 'cazzo', 'culo']" required />
+                                  [(ngModel)]="username" #f="ngModel" />
                           </div>
                           <div *ngIf="(u.touched || f.submitted) && u.invalid">
                               <p *ngIf="p.hasError('required')" class="error">Campo Obbligatorio

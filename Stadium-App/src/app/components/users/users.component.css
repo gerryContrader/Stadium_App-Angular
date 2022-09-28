@@ -1,0 +1,35 @@
+.btnuser{
+  display: flex !important;
+  justify-content: end !important;
+}
+
+.btnuser button {
+  margin-right: 1.5rem !important;
+}
+
+#user {
+  padding: 0 6rem !important;
+}
+
+#user ul li{
+  background-color: rgba(228, 224, 224, 0.658) !important;
+}
+.insert{
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 2rem !important;;
+
+}
+
+.insert td input{
+  margin-right: 1.5rem;
+
+  text-align: center !important;
+
+}
+.insert td button{
+  margin-left: 1.5rem;
+
+  text-align: center !important;
+
+}
