@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { EventDTO } from 'src/models/eventdto';
 
+import { UserDTO } from 'src/models/userdto';
 
 @Component({
   selector: 'app-edit-event',
@@ -14,10 +15,14 @@ export class EditEventComponent implements OnInit {
 
   event!: EventDTO;
 
+  user!:UserDTO;
+
   ngOnInit(): void {
-     this.service.eventRead(this.event.id).subscribe(event => {
+    this.user = JSON.parse(localStorage.getItem('currentUser') as string);
+
+    this.service.eventRead(this.event.id).subscribe(event => {
       this.event = event
-     })
+    })
   }
 
 }

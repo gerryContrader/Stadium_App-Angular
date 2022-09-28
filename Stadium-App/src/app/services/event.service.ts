@@ -29,11 +29,5 @@ export class EventService extends AbstractService<EventDTO>{
     return this.http.get<EventDTO>(`${environment.APIEndpoint}` + `${this.type}` + `/${id}`)
   }
 
-  // public getPreview(id: string): Observable<MoviePreview> {
-  //   return this._http.get<IMoviePreview>(`${environment.api.url}Title/${environment.key}/${id}`).pipe(
-  //     map(preview => this._objToModel(preview))
-  //   );
-  // }
 }
 
-}
