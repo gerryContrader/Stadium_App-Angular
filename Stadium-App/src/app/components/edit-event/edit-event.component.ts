@@ -13,16 +13,11 @@ export class EditEventComponent implements OnInit {
 
   constructor(private service: EventService) { }
 
-  event!: EventDTO;
-
-  user!:UserDTO;
+  event: EventDTO = new EventDTO;
+  user!: UserDTO;
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
-
-    this.service.eventRead(this.event.id).subscribe(event => {
-      this.event = event
-    })
   }
 
 }

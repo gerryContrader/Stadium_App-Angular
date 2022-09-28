@@ -52,7 +52,7 @@
         <td>{{event.stadiumName}}</td>
         <td>{{event.eventDate}}</td>
         <td>{{event.placesAvailable}}</td>
-        <td><a class="btn btn-success"href="edit-event">Modifica</a></td>
+        <td><button class="btn btn-success" [routerLink]="['/edit-event', event.id]"(click)="readEvent(event.id)">Modifica</button></td>
         <td><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
       </tr>
     </tbody>

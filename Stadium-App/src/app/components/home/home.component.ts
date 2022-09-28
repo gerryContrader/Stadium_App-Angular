@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
 import { EventDTO } from 'src/models/eventdto';
@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   
   public user!: UserDTO;
   public event!: EventDTO[];
+  public singleEvent: EventDTO = new EventDTO;
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
@@ -23,6 +24,12 @@ export class HomeComponent implements OnInit {
       this.event = event;
     });
   }
+
+  readEvent(id: number) {
+  this.service.eventRead(this.singleEvent.id).subscribe(event => {
+    event = this.singleEvent
+  })
+}
 
   delete(event: EventDTO) {
     this.service.delete(event.id).subscribe(() => this.service.getAll());
