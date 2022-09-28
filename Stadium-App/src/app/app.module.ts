@@ -14,6 +14,7 @@ import { UsersComponent } from './components/users/users.component';
 import { UserpageComponent } from './components/users/userpage/userpage.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Page404Component } from './components/page404/page404.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { Page404Component } from './components/page404/page404.component';
     UserpageComponent,
     FooterComponent,
     Page404Component,
+    ProfileComponent,
 
   ],
   imports: [
