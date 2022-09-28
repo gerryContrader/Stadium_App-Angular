@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="insert"><tr>
   <td>
     <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="username" [(ngModel)]="usertoinsert.username">
@@ -12,10 +14,10 @@
     </select>
   </td>
   <td>
-    <button (click)="insert(usertoinsert)">Insert</button>
+    <button class="btn btn-info" (click)="insert(usertoinsert)">Insert</button>
   </td>
   <td>
-    <button (click)="clear()">Clear</button>
+    <button class="btn btn-info" (click)="clear()">Clear</button>
   </td>
 </tr></div>
 

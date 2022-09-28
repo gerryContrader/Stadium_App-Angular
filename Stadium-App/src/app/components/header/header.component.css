@@ -1,5 +1,5 @@
 #navbarSupportedContent{
-
+z-index: 99999;
 
   display: flex !important;
   justify-content: end !important;

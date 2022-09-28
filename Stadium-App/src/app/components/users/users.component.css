@@ -1,3 +1,10 @@
+app-header{
+  z-index: 999 !important;
+
+}
+app-header::after {
+  z-index: 10;
+}
 .btnuser{
   display: flex !important;
   justify-content: end !important;
@@ -8,6 +15,7 @@
 }
 
 #user {
+  margin-top: 6rem !important;;
   padding: 0 6rem !important;
 }
 
