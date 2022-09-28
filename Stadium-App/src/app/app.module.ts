@@ -37,6 +37,7 @@ import { Page404Component } from './components/page404/page404.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
