@@ -39,6 +39,7 @@
         <th scope="col">Evento</th>
         <th scope="col">Stadio</th>
         <th scope="col">Data</th>
+        <th scope="col">Capienza Massima</th>
         <th scope="col">Posti Disponibili</th>
         <th scope="col">Modifica</th>
         <th scope="col">Elimina</th>
@@ -51,8 +52,9 @@
         <td>{{event.eventName}}</td>
         <td>{{event.stadiumName}}</td>
         <td>{{event.eventDate}}</td>
+        <td>{{event.maxCapacity}}</td>
         <td>{{event.placesAvailable}}</td>
-        <td><button class="btn btn-success" [routerLink]="['/edit-event', event.id]"(click)="readEvent(event.id)">Modifica</button></td>
+        <td><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
         <td><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
       </tr>
     </tbody>

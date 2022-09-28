@@ -25,8 +25,12 @@ export class EventService extends AbstractService<EventDTO>{
     this.type = 'event';
   }
 
-   public eventRead(id: number): Observable<EventDTO> {
-    return this.http.get<any>(environment.APIEndpoint + this.type + "/read?id=" + id)
+  public eventRead(id: number): Observable<EventDTO> {
+    return this.http.get<EventDTO>(environment.APIEndpoint + this.type + "/read?id=" + id)
+  }
+
+  public editEvent(eventDTO: EventDTO): Observable<EventDTO> {
+    return this.http.put<EventDTO>(environment.APIEndpoint + this.type + "/update", eventDTO)
   }
 
 }
