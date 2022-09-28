@@ -14,11 +14,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private service: EventService) { }
 
-  
-  user!: UserDTO;
-
   public events!: EventDTO[];
-  // userinsert: UserDTO = new UserDTO();
+  public userinsert: UserDTO = new UserDTO();
 
   ngOnInit(): void {
     // this.user = JSON.parse(localStorage.getItem('currentUser'));
