@@ -27,15 +27,18 @@ export class HomeComponent implements OnInit {
       });
     }
     else{
-      this.service.getAll().subscribe(event => {
-        this.event = event;
-        console.log(event)
-      });
+     this.getEvents()
     }
   }
 
+  getEvents() {
+    this.service.getAll().subscribe(event => {
+      this.event = event
+    });
+  }
+
   delete(event: EventDTO) {
-    this.service.delete(event.id).subscribe(() => this.service.getAll());
+    this.service.delete(event.id).subscribe(() => this.getEvents());
   }
 
 
