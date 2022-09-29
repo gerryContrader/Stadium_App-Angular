@@ -2,7 +2,7 @@ import { UserDTO } from "./userdto";
 
 export class EventDTO {
         public id!: number;
-        public userId!: UserDTO;
+        public user!: UserDTO;
         public placesAvailable!: number;
         public name!: string;
         public eventName!: string;

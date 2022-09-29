@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getAll().subscribe(event => {
       this.event = event;
+      console.log(event)
     });
   }
 

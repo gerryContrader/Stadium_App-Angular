@@ -8,29 +8,29 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nome
                                 evento<span class="text-danger"> *</span></label> <input type="text" id="fname"
-                                name="name" value={{event.eventName}} [(ngModel)]="name" #n="ngModel"onblur="validate(1)"> </div>
+                                name="name" value={{event.eventName}} [(ngModel)]="name" #n="ngModel"> </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">ID
                                 Utente associato<span class="text-danger"> *</span></label> <input type="text" [(ngModel)]="userId" #s="ngModel"
-                                id="lname" name="userId" value={{event.userId}} onblur="validate(2)"> </div>
+                                id="lname" name="userId" value={{event.user.username}}> </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Posti disponibili<span class="text-danger">
                                     *</span></label> <input type="text" [(ngModel)]="placesAvailable" #l="ngModel" id="email" name="placesAvailable"
                                     value={{event.placesAvailable}}
-                                onblur="validate(3)"> </div>
+                                > </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Capienza massima<span class="text-danger">
                                     *</span></label> <input type="text" [(ngModel)]="maxCapacity" #m="ngModel" id="mob" name="maxCapacity" value={{event.maxCapacity}}
-                                onblur="validate(4)"> </div>
+                                > </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Stadio<span class="text-danger"> *</span></label> <input
-                                type="text" [(ngModel)]="stadiumName" #t="ngModel" id="job" name="stadiumName" value={{event.stadiumName}} onblur="validate(5)"> </div>
+                                type="text" [(ngModel)]="stadiumName" #t="ngModel" id="job" name="stadiumName" value={{event.stadiumName}}> </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Data<span class="text-danger"> *</span></label> <input
-                                type="date" [(ngModel)]="eventDate" #d="ngModel" id="mob" name="eventDate" value={{event.eventDate}} onblur="validate(4)"> </div>
+                                type="date" [(ngModel)]="eventDate" #d="ngModel" id="mob" name="eventDate" value={{event.eventDate}}> </div>
                     </div>
 
                     <div class="row justify-content-center">
