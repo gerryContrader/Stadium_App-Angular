@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 /**
- * Service astratto, implementa tutti i metodi CRUD inviando request al server di SpringBoot. 
+ * Service astratto, implementa tutti i metodi CRUD inviando request al server di SpringBoot.
  * @param port il port del backend
  * @param type la mappatura del controller di ciascuna entità.
- * 
+ *
  * @see Service
- * 
+ *
  * @author Vittorio Valent
  */
 export abstract class AbstractService<DTO> implements Service<DTO> {
@@ -40,9 +40,5 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
         return this.http.put<DTO>(environment.APIEndpoint + this.type + '/update', dto);
 
     }
-
-    // getAllByUserId(id:number): Observable<DTO[]> {
-    //     return this.http.get<DTO[]>(environment.APIEndpoint + this.type '/getmine?id='+ id);
-    // }
 
 }

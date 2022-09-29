@@ -20,10 +20,18 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.service.getAll().subscribe(event => {
-      this.event = event;
-      console.log(event)
-    });
+    if(this.user.usertype === "ADMIN"){
+      this.service.getAllByUserId(this.user.id).subscribe(event => {
+        this.event = event;
+        console.log(event)
+      });
+    }
+    else{
+      this.service.getAll().subscribe(event => {
+        this.event = event;
+        console.log(event)
+      });
+    }
   }
 
   delete(event: EventDTO) {
