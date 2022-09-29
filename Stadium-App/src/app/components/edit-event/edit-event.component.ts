@@ -31,7 +31,6 @@ export class EditEventComponent implements OnInit {
     this.eventId = this.actRoute.snapshot.params['id'];
     this.service.eventRead(this.eventId).subscribe(event => {
       this.event = event
-      console.log(event)
     })
   }
   public handleSubmit(form: NgForm): void {

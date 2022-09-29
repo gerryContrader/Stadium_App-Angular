@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EditEventComponent } from './components/edit-event/edit-event.component';
 import { HomeComponent } from './components/home/home.component';
+import { InsertEventComponent } from './components/insert-event/insert-event.component';
 import { LoginComponent } from './components/login/login.component';
 import { Page404Component } from './components/page404/page404.component';
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path:'register', component: RegisterComponent },
   { path:'users', component: UsersComponent },
   { path: 'edit-event/:id', component: EditEventComponent},
+  {path: 'insert-event', component:InsertEventComponent},
   // { path: '**', redirectTo:'/404', pathMatch: 'full' },
   { path: '', redirectTo:'/login', pathMatch: 'full' },
 ];
