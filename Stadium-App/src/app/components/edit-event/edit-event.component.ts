@@ -38,10 +38,9 @@ export class EditEventComponent implements OnInit {
     if (form.invalid) {
       return;
     } else {
-      this.event = new EventDTO();
 
+      console.log(this.event);
       this.service.editEvent(this.event).subscribe((event) => {
-        this.event = event
 
       })
     }

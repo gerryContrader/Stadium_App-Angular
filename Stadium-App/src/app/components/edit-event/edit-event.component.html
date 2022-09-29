@@ -8,34 +8,35 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nome
                                 evento<span class="text-danger"> *</span></label> <input type="text" id="fname"
-                                name="name" value={{event.eventName}} [(ngModel)]="name" #n="ngModel"> </div>
+                                name="name" value={{event.eventName}} [(ngModel)]="event.eventName" #n="ngModel"> </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">ID
-                                Utente associato<span class="text-danger"> *</span></label> <input type="text" [(ngModel)]="userId" #s="ngModel"
-                                id="lname" name="userId" value={{event.user.username}}> </div>
+                                Utente associato<span class="text-danger"> *</span></label> <input type="text" [(ngModel)]="event.user.id" #s="ngModel"
+                                id="lname" name="userId" value=""> </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Posti disponibili<span class="text-danger">
-                                    *</span></label> <input type="text" [(ngModel)]="placesAvailable" #l="ngModel" id="email" name="placesAvailable"
+                                    *</span></label> <input type="text" [(ngModel)]="event.placesAvailable" #l="ngModel" id="email" name="placesAvailable"
                                     value={{event.placesAvailable}}
                                 > </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Capienza massima<span class="text-danger">
-                                    *</span></label> <input type="text" [(ngModel)]="maxCapacity" #m="ngModel" id="mob" name="maxCapacity" value={{event.maxCapacity}}
+                                    *</span></label> <input type="text" [(ngModel)]="event.maxCapacity" #m="ngModel" id="mob" name="maxCapacity" value={{event.maxCapacity}}
                                 > </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Stadio<span class="text-danger"> *</span></label> <input
-                                type="text" [(ngModel)]="stadiumName" #t="ngModel" id="job" name="stadiumName" value={{event.stadiumName}}> </div>
+                                type="text" [(ngModel)]="event.stadiumName" #t="ngModel" id="job" name="stadiumName" value={{event.stadiumName}}> </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Data<span class="text-danger"> *</span></label> <input
-                                type="date" [(ngModel)]="eventDate" #d="ngModel" id="mob" name="eventDate" value={{event.eventDate}}> </div>
+                                type="date" [(ngModel)]="event.eventDate" #d="ngModel" id="mob" name="eventDate" value={{event.eventDate}}> </div>
                     </div>
+                    <input type="hidden" [(ngModel)]="event.id" #d="ngModel" value="{{event.id}}">
 
                     <div class="row justify-content-center">
                         <div class="form-group col-sm-6"> <button type="submit"
-                                class="btn-block btn-primary" (click)="handleSubmit(f)">Modifica</button> </div>
+                                class="btn-block btn-primary" (click)="handleSubmit(f)"[routerLink]="'/home'">Modifica</button> </div>
                     </div>
                 </form>
             </div>
