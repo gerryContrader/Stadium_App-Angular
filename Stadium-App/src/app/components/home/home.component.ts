@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
 import { TicketService } from 'src/app/services/ticket.service';
@@ -20,18 +20,33 @@ export class HomeComponent implements OnInit {
   public event!: EventDTO[];
   public ticket!: TicketDTO[];
 
+
+
+  public singleEvent: EventDTO = new EventDTO;
+
   ngOnInit(): void {
 
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
+    if(this.user.usertype === "ADMIN"){
+      this.service.getAllByUserId(this.user.id).subscribe(event => {
+        this.event = event;
+        console.log(event)
+      });
+    }
+    else{
+     this.getEvents()
+    }
+  }
+
+  getEvents() {
     this.service.getAll().subscribe(event => {
-      console.log(event);
-      this.event = event;
+      this.event = event
     });
   }
 
 
   delete(event: EventDTO) {
-    this.service.delete(event.id).subscribe(() => this.service.getAll());
+    this.service.delete(event.id).subscribe(() => this.getEvents());
   }
 
   buyTicket(ticket:TicketDTO) {

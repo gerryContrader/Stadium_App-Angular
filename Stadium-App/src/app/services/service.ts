@@ -22,6 +22,5 @@ export interface Service<DTO> {
 
     getAll(): Observable<DTO[]>;
 
-    // getAllByUserId(id:number): Observable<DTO>;
 
 }

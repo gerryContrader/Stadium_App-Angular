@@ -6,6 +6,8 @@
 
 
   <div class="dropdown">
+ <!-- <div id="container"> -->
+  <!-- <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Città
   </button>
@@ -28,10 +30,13 @@
 <div><input class="btn btn-secondary dropdown-toggle" type="date" placeholder="Dal giorno"> </div>
 
   <div>
-    <input class="btn btn-secondary dropdown-toggle" type="date" placeholder="Al giorno"></div>
-</div>
+    <input class="btn btn-secondary dropdown-toggle" type="date" placeholder="Al giorno"></div> -->
+ <!-- </div> -->
+
 
 <div id="teams">
+  <button type="button" style="margin-bottom:2%; margin-top: 2%;" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" [routerLink]="'/insert-event'">Crea Evento</button>
+
   <table class="table">
     <thead>
       <tr>
@@ -40,6 +45,7 @@
         <th scope="col">Evento</th>
         <th scope="col">Stadio</th>
         <th scope="col">Data</th>
+        <th scope="col">Capienza Massima</th>
         <th scope="col">Posti Disponibili</th>
         <th scope="col">Acquista</th>
         <th scope="col">Modifica</th>
@@ -49,15 +55,17 @@
     <tbody *ngFor="let event of event">
       <tr>
         <th scope="row">{{event.id}}</th>
-        <td>{{event.userId}}</td>
+        <td>{{event.user.username}}</td>
         <td>{{event.eventName}}</td>
         <td>{{event.stadiumName}}</td>
         <td>{{event.eventDate}}</td>
+        <td>{{event.maxCapacity}}</td>
         <td>{{event.placesAvailable}}</td>
         <td>{{event.ticket}}</td>
 
         <td ><button  class="btn btn-danger" routerLink="/ticket"  routerLinkActive="ticket" (click)="buyTicket(event.ticket)">Acquista</button></td>
         <td><button class="btn btn-success">Modifica</button></td>
+        <td><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
         <td><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
       </tr>
     </tbody>

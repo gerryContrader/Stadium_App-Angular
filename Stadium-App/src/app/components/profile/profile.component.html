@@ -1,5 +1,4 @@
 <app-header></app-header>
-
 <!-- <div class="container mt-5">
   <div class="row">
     <div class="col-6">
@@ -52,7 +51,7 @@
 <div class="container rounded bg-white mt-5">
   <div class="row">
       <div class="col-md-4 border-right">
-          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://yt3.ggpht.com/ytc/AMLnZu9tvAOMEu0JJzee23Z6gomHSqbVMJNMDjCBzXQ02A=s900-c-k-c0x00ffffff-no-rj" width="90"><span class="font-weight-bold">Gesu di Nazareth</span><span class="text-black-50">xXGesu_00Xx@live.com</span><span>Via degli ulivi, 12, Nazareth (GR)</span></div>
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://yt3.ggpht.com/ytc/AMLnZu9tvAOMEu0JJzee23Z6gomHSqbVMJNMDjCBzXQ02A=s900-c-k-c0x00ffffff-no-rj" width="90"><span class="font-weight-bold">{{user.name}} {{user.surname}}</span><span class="text-black-50">{{user.email}}</span><span>{{user.address}}</span></div>
       </div>
       <div class="col-md-8">
           <div class="p-3 py-5">
@@ -63,15 +62,15 @@
                   <h6 class="text-right">Modifica Profilo</h6>
               </div>
               <div class="row mt-2">
-                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Nome" value="Gesu"></div>
-                  <div class="col-md-6"><input type="text" class="form-control" value="Di Nazareth" placeholder="Cognome"></div>
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Nome" value={{user.name}}></div>
+                  <div class="col-md-6"><input type="text" class="form-control" value={{user.surname}} placeholder="Cognome"></div>
               </div>
               <div class="row mt-3">
-                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="xXGesu_00Xx@live.com"></div>
-                  <div class="col-md-6"><input type="text" class="form-control" value="++00 666 6666666" placeholder="Phone number"></div>
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value={{user.email}}></div>
+                  <div class="col-md-6"><input type="text" class="form-control" value={{user.phone_number}} placeholder="Telefono"></div>
               </div>
               <div class="row mt-3">
-                  <div class="col-md-6"><input type="text" class="form-control" placeholder="inidirizzo" value="Via degli ulivi, 12, Nazareth (GR)"></div>
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="inidirizzo" value={{user.address}}></div>
               </div>
 
               <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="button">Salva Informazioni</button></div>
