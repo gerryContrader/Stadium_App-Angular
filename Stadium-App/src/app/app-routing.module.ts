@@ -9,6 +9,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { RegisterComponent } from './components/register/register.component';
+import { TicketComponent } from './components/ticket/ticket.component';
 import { UsersComponent } from './components/users/users.component';
 
 
@@ -16,13 +17,19 @@ const routes: Routes = [
   { path: 'profile', component:ProfileComponent},
   { path: 'home', component:HomeComponent},
   { path:'login', component: LoginComponent },
-  { path:'404', component: Page404Component },
+
   { path:'register', component: RegisterComponent },
   { path:'users', component: UsersComponent },
+  { path: 'edit-event', component: EditEventComponent},
+  { path: 'ticket', component:TicketComponent},
   { path: 'edit-event/:id', component: EditEventComponent},
   {path: 'insert-event', component:InsertEventComponent},
-  // { path: '**', redirectTo:'/404', pathMatch: 'full' },
+
+
+
   { path: '', redirectTo:'/login', pathMatch: 'full' },
+  { path:'404', component: Page404Component },
+  { path: '**', redirectTo:'/404' },
 ];
 
 @NgModule({

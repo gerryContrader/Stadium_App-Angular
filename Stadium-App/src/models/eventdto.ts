@@ -1,3 +1,4 @@
+import { TicketDTO } from "./ticketdto";
 import { UserDTO } from "./userdto";
 
 export class EventDTO {
@@ -9,8 +10,9 @@ export class EventDTO {
         public eventDate!: Date;
         public stadiumName!: string;
         public maxCapacity!: number;
+        public ticket!: TicketDTO
     constructor(
-        
+
     ) {
     }
 }
