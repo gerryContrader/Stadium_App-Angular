@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
+import { TicketService } from 'src/app/services/ticket.service';
 import { EventDTO } from 'src/models/eventdto';
+import { TicketDTO } from 'src/models/ticketdto';
 import { UserDTO } from 'src/models/userdto';
 
 @Component({
@@ -12,12 +14,14 @@ import { UserDTO } from 'src/models/userdto';
 export class HomeComponent implements OnInit {
 
 
-  constructor(private router: Router, private service: EventService) { }
-  
+  constructor(private router: Router, private service: EventService, private ticketService: TicketService) { }
+
   public user!: UserDTO;
   public event!: EventDTO[];
+  public ticket!: TicketDTO[];
 
   ngOnInit(): void {
+
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
     this.service.getAll().subscribe(event => {
       console.log(event);
@@ -25,9 +29,18 @@ export class HomeComponent implements OnInit {
     });
   }
 
+
   delete(event: EventDTO) {
     this.service.delete(event.id).subscribe(() => this.service.getAll());
   }
+
+  buyTicket(ticket:TicketDTO) {
+    this.ticketService.buyTicket(ticket).subscribe(() => this.ticketService.insert(ticket));
+    console.log(ticket);
+
+
+  }
+
 
 
 }

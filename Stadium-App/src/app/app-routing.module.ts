@@ -8,6 +8,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { RegisterComponent } from './components/register/register.component';
+import { TicketComponent } from './components/ticket/ticket.component';
 import { UsersComponent } from './components/users/users.component';
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path:'register', component: RegisterComponent },
   { path:'users', component: UsersComponent },
   { path: 'edit-event', component: EditEventComponent},
+  { path: 'ticket', component:TicketComponent},
   // { path: '**', redirectTo:'/404', pathMatch: 'full' },
   { path: '', redirectTo:'/login', pathMatch: 'full' },
 ];

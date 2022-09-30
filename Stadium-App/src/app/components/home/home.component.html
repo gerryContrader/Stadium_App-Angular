@@ -1,9 +1,10 @@
 <app-header></app-header>
 <div class="img">
 </div>
+<div style="text-align: center;"><h1> Benvenuto   {{user.username}}</h1></div>
   <div id="container">
 
-    <div></div>
+
   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Città
@@ -40,6 +41,7 @@
         <th scope="col">Stadio</th>
         <th scope="col">Data</th>
         <th scope="col">Posti Disponibili</th>
+        <th scope="col">Acquista</th>
         <th scope="col">Modifica</th>
         <th scope="col">Elimina</th>
       </tr>
@@ -52,6 +54,9 @@
         <td>{{event.stadiumName}}</td>
         <td>{{event.eventDate}}</td>
         <td>{{event.placesAvailable}}</td>
+        <td>{{event.ticket}}</td>
+
+        <td ><button  class="btn btn-danger" routerLink="/ticket"  routerLinkActive="ticket" (click)="buyTicket(event.ticket)">Acquista</button></td>
         <td><button class="btn btn-success">Modifica</button></td>
         <td><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
       </tr>

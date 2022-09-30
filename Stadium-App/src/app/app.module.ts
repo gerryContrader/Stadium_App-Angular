@@ -16,6 +16,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { EditEventComponent } from './components/edit-event/edit-event.component';
+import { TicketComponent } from './components/ticket/ticket.component';
 
 
 
@@ -36,6 +37,7 @@ import { EditEventComponent } from './components/edit-event/edit-event.component
     ProfileComponent,
     RegisterComponent,
     EditEventComponent,
+    TicketComponent,
 
   ],
   imports: [
