@@ -23,10 +23,17 @@ export class HomeComponent implements OnInit {
 
 
   public singleEvent: EventDTO = new EventDTO;
+  public role!: number;
 
   ngOnInit(): void {
 
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
+    if(this.user.usertype==="USER"){
+      this.role = 2;
+    }
+    else{
+      this.role = 0;
+    }
     if(this.user.usertype === "ADMIN"){
       this.service.getAllByUserId(this.user.id).subscribe(event => {
         this.event = event;
@@ -43,6 +50,10 @@ export class HomeComponent implements OnInit {
       this.event = event
     });
   }
+
+ /* addFavourites(user: UserDTO, event: EventDTO){
+    this.service.addFavourites().subscribe(() => this.service.getAll());
+  }*/
 
 
   delete(event: EventDTO) {
