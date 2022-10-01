@@ -7,13 +7,13 @@ import { UserDTO } from 'src/models/userdto';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  ciao:String = "ciao"
   constructor() { }
 
   user!:UserDTO;
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
+
   }
 
 }
