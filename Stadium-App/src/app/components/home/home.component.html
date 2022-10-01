@@ -47,9 +47,9 @@
         <th scope="col">Data</th>
         <th scope="col">Capienza Massima</th>
         <th scope="col">Posti Disponibili</th>
-        <th scope="col">Acquista</th>
-        <th scope="col">Modifica</th>
-        <th scope="col">Elimina</th>
+        <th *ngIf="role==2"scope="col">Acquista</th>
+        <th *ngIf="role!=2" scope="col">Modifica</th>
+        <th *ngIf="role!=2" scope="col">Elimina</th>
         <th *ngIf="role==2" scope="col">Preferiti</th>
       </tr>
     </thead>
@@ -63,10 +63,10 @@
         <td>{{event.maxCapacity}}</td>
         <td>{{event.placesAvailable}}</td>
         <!-- <td>{{event.ticket}}</td> -->
-        <td ><button  class="btn btn-danger" routerLink="/ticket"  routerLinkActive="ticket" (click)="buyTicket(event.ticket)">Acquista</button></td>
-        <td><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
-        <td><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
-        <td *ngIf="role==2"><button class="btn btn-primary" (click)="delete(event)">Aggiungi</button></td>
+        <td *ngIf="role==2"><button  class="btn btn-danger" routerLink="/ticket"  routerLinkActive="ticket" (click)="buyTicket(event.ticket)">Acquista</button></td>
+        <td *ngIf="role!=2"><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
+        <td *ngIf="role!=2"><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
+        <td *ngIf="role==2"><button class="btn btn-primary">Aggiungi</button></td>
       </tr>
     </tbody>
   </table>
