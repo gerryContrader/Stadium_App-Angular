@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { EventService } from 'src/app/services/event.service';
 import { EventDTO } from 'src/models/eventdto';
 import { UserDTO } from 'src/models/userdto';
 
@@ -11,27 +13,30 @@ import { UserDTO } from 'src/models/userdto';
 })
 export class InsertEventComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private service: EventService) { }
 
-    public eventId: number;
     public event: EventDTO = new EventDTO();
-    public user!: UserDTO;
+    public user: UserDTO = new UserDTO();
   
     public name!: string;
-    public userId!: UserDTO;
     public placesAvailable: number;
     public maxCapacity!: number;
     public stadiumName!: string;
     public eventDate!: Date;
   
     ngOnInit(): void {
-      this.user = JSON.parse(localStorage.getItem('currentUser') as string);
+
     }
+
     public handleSubmit(form: NgForm): void {
       if (form.invalid) {
         return;
       } else {
-
+        console.log(this.user)
+        console.log(this.event)
+        this.service.createEvent(this.event).subscribe(() => {
+          this.router.navigate(['home'])
+        })
       }
   
     }

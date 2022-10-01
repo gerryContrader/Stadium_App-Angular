@@ -18,6 +18,8 @@ export interface Service<DTO> {
 
     insert(dto: DTO): Observable<any>;
 
+    buyTicket(dto: DTO): Observable<any>;
+
     getAll(): Observable<DTO[]>;
 
 

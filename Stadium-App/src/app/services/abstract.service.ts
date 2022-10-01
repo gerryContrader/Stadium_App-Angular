@@ -41,4 +41,15 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
 
     }
 
+    buyTicket(dto: DTO): Observable<DTO> {
+      return this.http.put<DTO>(environment.APIEndpoint + this.type + '/buyticket', dto);
+
+  }
+
+
+
+    // getAllByUserId(id:number): Observable<DTO[]> {
+    //     return this.http.get<DTO[]>(environment.APIEndpoint + this.type '/getmine?id='+ id);
+    // }
+
 }
