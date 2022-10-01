@@ -7,7 +7,6 @@ import { UserDTO } from 'src/models/userdto';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  ciao:String = "ciao"
   constructor() { }
 
   user!:UserDTO;
