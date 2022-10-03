@@ -23,6 +23,7 @@ export class InsertEventComponent implements OnInit {
 
     public event: EventDTO = new EventDTO();
     public user: UserDTO = new UserDTO();
+    public userId: number;
 
     public name!: string;
     public placesAvailable: number;
@@ -31,8 +32,8 @@ export class InsertEventComponent implements OnInit {
     public eventDate!: Date;
 
     ngOnInit(): void {
-      this.service_2.getAll()
-          .subscribe(x=>this.users = x);
+      // this.service_2.getAll()
+      //     .subscribe(x=>this.users = x);
 
     }
 
@@ -40,11 +41,16 @@ export class InsertEventComponent implements OnInit {
       if (form.invalid) {
         return;
       } else {
-        console.log(this.user)
-        console.log(this.event)
-        this.service.createEvent(this.event).subscribe(() => {
-          this.router.navigate(['home'])
+        // console.log(this.user)
+        //this.user =  this.service_2.userRead(this.user.id);
+        this.service_2.userRead(this.user.id).subscribe(x => {
+          this.user = x
+          this.event.user = x;
+          this.service.createEvent(this.event).subscribe(() => {
+            this.router.navigate(['home'])
+          })
         })
+        
       }
 
     }
