@@ -79,6 +79,8 @@ export class HomeComponent implements OnInit {
       });
   }
 
+
+
   addFavourite(i:number){
       this.userService.userRead(this.user.id).subscribe(y => {
       this.x = y

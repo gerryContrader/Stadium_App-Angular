@@ -20,19 +20,11 @@
         <td>{{tickets.purchaseDate}}</td>
         <td>{{tickets.event.eventName}}</td>
         <td>{{tickets.user.username}}</td>
-        <td><button class="btn btn-danger" (click)="delete(tickets)">Elimina</button></td>
+        <td><button class="btn btn-danger" (click)="deleteTicket(tickets)">Elimina</button></td>
       </tr>
     </tbody>
   </table>
-  <!-- <ul style="font-weight:bold ; margin-top:1.6rem; " *ngFor="let ticket of ticket" class="list-group">
-    <li  class="list-group-item">{{ticket.id}}
-      {{ticket.purchaseDate}}
-      {{ticket.event.eventName}}
-      {{ticket.user.username}}
-      <span class="btnuser">
-        <button  type="button" (click)="delete(ticket)" class="btn btn-danger">Elimina</button>
-        <button type="button" class="btn btn-info">Info</button></span></li>
-  </ul> -->
+
 </div>
 
 <div>
