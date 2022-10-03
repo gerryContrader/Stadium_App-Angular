@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EditEventComponent } from './components/edit-event/edit-event.component';
 import { HomeComponent } from './components/home/home.component';
+import { InfoProfileComponent } from './components/info-profile/info-profile.component';
 import { InsertEventComponent } from './components/insert-event/insert-event.component';
 import { LoginComponent } from './components/login/login.component';
 import { Page404Component } from './components/page404/page404.component';
@@ -14,10 +15,10 @@ import { UsersComponent } from './components/users/users.component';
 
 
 const routes: Routes = [
-  { path: 'profile', component:ProfileComponent},
+  { path: 'info-profile/:id', component:InfoProfileComponent},
   { path: 'home', component:HomeComponent},
   { path:'login', component: LoginComponent },
-
+  { path: 'profile', component:ProfileComponent},
   { path:'register', component: RegisterComponent },
   { path:'users', component: UsersComponent },
   { path: 'edit-event', component: EditEventComponent},

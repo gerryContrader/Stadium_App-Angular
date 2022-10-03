@@ -1,3 +1,5 @@
+
+
 app-header {
   display:fixed !important;
   position: sticky !important;
@@ -9,13 +11,15 @@ app-header {
 
 }
 #container {
-  padding: 0 8rem !important;
-  margin-top: 5rem;
-  display: flex;
-  justify-content: space-between !important;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
 }
 
-
+.poput::after{
+  background-image: url("../../../assets/Stadium_App_Full_HD.mp4");
+}
 #teams {
 
   padding:0 3rem !important;

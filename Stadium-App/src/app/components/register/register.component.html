@@ -1,32 +1,45 @@
 <form (ngSubmit)="handleSubmit(f)" #f="ngForm" class="vh-10 gradient-custom">
-    <div class="container py-4 h-100">
-        <div class="row d-flex h-100" style="justify-content:right">
+    <div class="container py-10 h-100">
+        <div class=" d-flex h-100" style="justify-content:center; ">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card bg-light text-black" style="border-radius: 1rem; margin-top:25%">
+                <div class="card bg-light text-black" style="border-radius: 1rem; margin-top:5%; ">
                     <div class="card-body text-center">
 
-                        <div class="mb-md-5 mt-md-4 pb-5">
+                        <div class="  ">
 
-                            <img src="../../../assets/stadium_App_logo.png" class="col-sm-7 text-black logo"
-                                style="margin-bottom: 5%;">
-
-                            <div class="form-outline form-black mb-3">
+                            <img src="../../../assets/stadium_App_logo.png" class="col-sm-9 text-black logo"
+                               style="margin-bottom: 0rem;" >
+                            <div class="1part" >
+                            <div class="form-outline form-black ">
                                 <label class="form-label" for="typeEmailX" style="float:left">Username</label>
                                 <input type="text" id="typeEmailX" class="form-control" name="username"
                                     style="border-radius: 1rem; border-color: black;" placeholder="inserici username"
-                                    [(ngModel)]="username" #u="ngModel" required/>
+                                    [(ngModel)]="usertoinsert.username" #u="ngModel" required/>
                             </div>
+                            <div class="form-outline form-black ">
+                              <label class="form-label" for="typeEmailX" style="float:left">Nome</label>
+                              <input type="text" id="typeEmailX" class="form-control" name="name"
+                                  style="border-radius: 1rem; border-color: black;" placeholder="inserici Nome"
+                                  [(ngModel)]="usertoinsert.name" #u="ngModel" required/>
+                          </div>
+                          <div class="form-outline form-black ">
+                            <label class="form-label" for="typeEmailX" style="float:left">Cognome</label>
+                            <input type="text" id="typeEmailX" class="form-control" name="surname"
+                                style="border-radius: 1rem; border-color: black;" placeholder="inserici cognome"
+                                [(ngModel)]="usertoinsert.surname" #u="ngModel" required/>
+                        </div>
+
                             <div *ngIf="(u.touched || f.submitted) && u.invalid">
                                 <p *ngIf="u.hasError('required')" class="error">Campo Obbligatorio
                                 </p>
                                 <p *ngIf="u.hasError('forbidden')" class="error">Username non ammesso
                                 </p>
                             </div>
-                            <div class="form-outline form-black mb-3">
+                            <div class="form-outline form-black ">
                                 <label class="form-label" for="typeEmailX" style="float:left">E-mail</label>
                                 <input type="text" id="typeEmailX" class="form-control" name="email"
                                     style="border-radius: 1rem; border-color: black;" placeholder="inserisci email"
-                                    [(ngModel)]="email" #e="ngModel"
+                                    [(ngModel)]="usertoinsert.mail" #e="ngModel"
                                     [appForbidden]="['admin@admin.com', 'user@user.it', 'administrator@admin.it']"
                                     required />
                             </div>
@@ -36,27 +49,49 @@
                                 <p *ngIf="e.hasError('forbidden')" class="error">Email non ammessa
                                 </p>
                             </div>
-                            <div class="form-outline form-black mb-3">
+                            <div class="form-outline form-black ">
                                 <label class="form-label" for="typePasswordX" style="float:left">Password</label>
                                 <input type="password" id="typePasswordX" class="form-control" name="inserisci password"
                                     style="border-radius: 1rem; border-color: black;" placeholder="****************"
-                                    [(ngModel)]="password" #p="ngModel" required />
+                                    [(ngModel)]="usertoinsert.password" #p="ngModel" required />
                                 <!-- COPIA DA BLOCCO NOTE CLAUDIO QUESTA RIGA -->
                             </div>
+                            </div>
+                            <div class="2part" >
                             <div *ngIf="(p.touched || f.submitted ) && p.invalid">
                                 <p *ngIf="p.hasError('required')" class="error">Campo Obbligatorio
                                 </p>
                                 <p *ngIf="p.hasError('pattern')" class="error">Password non valida
                                 </p>
                             </div>
-                            <button class="btn btn-danger btn-block" type="submit"
-                                style="border-radius: 1rem; margin-top: 10%;">Registrati</button>
+                            <div class="form-outline form-black ">
+                              <label class="form-label" for="typeEmailX" style="float:left">Indirizzo</label>
+                              <input type="text" id="typeEmailX" class="form-control" name="username"
+                                  style="border-radius: 1rem; border-color: black;" placeholder="inserici Indirizzo"
+                                  [(ngModel)]="usertoinsert.address" #u="ngModel" required/>
+                          </div>
+                          <div class="form-outline form-black">
+                            <label class="form-label" for="phone" style="float:left">Num.telefono</label>
+                            <input type="text" id="typeEmailX" class="form-control" name="username"
+                                style="border-radius: 1rem; border-color: black;" placeholder=" Numero Telefono"
+                                [(ngModel)]="usertoinsert.phone" #u="ngModel" required/>
+                        </div>
+                          <div class="form-outline form-black ">
+                            <label for="usertype">Usertype</label><br>
+                            <select  style="height:2rem ;width:4.5rem;border-radius: 3px;" placeholder="usertype" [(ngModel)]="usertoinsert.usertype">
+                            <option value="ADMIN">ADMIN</option>
+                            <option value="USER">USER</option>
+                          </select></div>
+                        </div>
+                            <button class="btn btn-danger btn-block"  type="submit"
+                                style="border-radius: 1rem; margin-top: 5%;" (click)="handleSubmit(f)">Registrati</button>
                         </div>
 
+
                         <div>
-                            <p style="display:block">Hai già un account? <a routerLink="/login"
+                            <p >Hai già un account? <a routerLink="/login"
                                     style="color:rgba(219, 90, 90, 0.767); font-weight: bold;">Login</a></p>
-                            <p class="small pb-lg-2" style="color:grey; margin-top: 0%;">Powered by Contrader</p>
+                            <p class="" style="color:grey; margin-top: 0%;margin-bottom:-1rem;">Powered by Contrader</p>
                         </div>
 
                     </div>

@@ -2,47 +2,35 @@
 <div id="image">
 
 </div>
-<div class=" card"   style="margin-top: 2rem; width: 60rem; text-align: center;align-items: center;margin-left: 15rem;">
-<div class="insert card-body " style="width: auto; padding: auto; text-align: center;"><tr>
-  <td>
-    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="username" [(ngModel)]="usertoinsert.username">
-  </td>
-  <td>
-    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="password" [(ngModel)]="usertoinsert.password">
-  </td>
-  <td>
-    <select  style="height:2rem ;width:2rem;border-radius: 3px;" placeholder="usertype" [(ngModel)]="usertoinsert.usertype">
-      <option value="ADMIN">ADMIN</option>
-      <option value="USER">USER</option>
-    </select>
-  </td>
-  <td>
-    <button class="btn btn-info" (click)="insert(usertoinsert)">Insert</button>
-  </td>
-  <td>
-    <button class="btn btn-info" (click)="clear()">Clear</button>
-  </td>
-</tr></div>
-</div>
-<div  id="user">
+
+<div style="text-align:center ;"  id="user">
+  <h1>Utenti</h1>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Cognome</th>
         <th scope="col">Usertype</th>
-        <th scope="col">Modifica</th>
         <th scope="col">Elimina</th>
+        <!-- <th scope="col">Modifica</th> -->
+        <th scope="col">info</th>
       </tr>
     </thead>
     <tbody *ngFor="let user of users">
       <tr>
         <th scope="row">{{user.id}}</th>
         <td>{{user.username}}</td>
+        <td>{{user.mail}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.surname}}</td>
         <td>{{user.usertype}}</td>
 
         <td><button class="btn btn-danger" (click)="delete(user)">Elimina</button></td>
-        <td><button class="btn btn-info" (click)="switchEdit(user)">Modifica</button></td>
+        <!-- <td><button class="btn btn-info" (click)="switchEdit(user)">Modifica</button></td> -->
+        <td><button class="btn btn-info" [routerLink]="['/info-profile', user.id]">Info</button></td>
         <div *ngIf="user.editing == true"><td>
           Username:<input [(ngModel)]="user.username">
         </td>
@@ -56,3 +44,51 @@
   </table>
 
   </div>
+
+
+<div *ngIf="userin.usertype =='ADMIN'" class=" card"   >
+  <h1>Inserisci Nuovo Utente</h1>
+<div  class="insert card-body " style=" padding: auto; text-align: center;"><tr>
+  <td>
+    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="Name" [(ngModel)]="usertoinsert.name">
+  </td>
+  <br>
+  <td>
+    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="Surname" [(ngModel)]="usertoinsert.surname">
+  </td>
+  <br>
+  <td>
+    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="phone number" [(ngModel)]="usertoinsert.phone">
+  </td>
+  <br>
+  <td>
+    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="Address" [(ngModel)]="usertoinsert.address">
+  </td>
+  <br>
+  <td>
+    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="username" [(ngModel)]="usertoinsert.username">
+  </td>
+  <br>
+  <td>
+    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="password" [(ngModel)]="usertoinsert.password">
+  </td>
+  <br>
+  <td>
+    <select  style="height:2rem ;width:4.5rem;border-radius: 3px;" placeholder="usertype" [(ngModel)]="usertoinsert.usertype">
+      <option value="ADMIN">ADMIN</option>
+      <option value="USER">USER</option>
+    </select>
+  </td>
+
+
+  <td>
+    <button class="btn btn-info" (click)="insert(usertoinsert)">Insert</button>
+  </td>
+
+  <td>
+    <button class="btn btn-info" (click)="clear()">Clear</button>
+  </td>
+</tr></div>
+</div>
+
+  <app-footer></app-footer>

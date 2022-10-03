@@ -2,3 +2,11 @@
   display: flex !important;
   justify-content: flex-end !important;
 }
+
+
+#background{
+  background-image: url("../../../assets/bleachers-g3b2b6273f_1920.jpg");
+  height: 15rem;
+  background-position: top;
+}
+

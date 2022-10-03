@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   public username!: string;
   public password!: string;
-
+public switch: boolean = false;
   loginDTO!: LoginDTO;
 
   constructor(private router: Router, private service: UserService) { }
@@ -48,5 +48,11 @@ export class LoginComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+  }
+
+  switchDIV() {
+    this.switch = true;
+
+    return true
   }
 }

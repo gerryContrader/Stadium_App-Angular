@@ -32,4 +32,12 @@ export class UserService extends AbstractService<UserDTO>{
     return this.http.post<any>(environment.APIEndpoint + this.type + '/login', loginDTO)
   }
 
+  public userRead(id: number): Observable<UserDTO> {
+    return this.http.get<UserDTO>(environment.APIEndpoint + this.type + "/read?id=" + id)
+  }
+
+  public editUser(userDTO:UserDTO): Observable<UserDTO> {
+    return this.http.put<UserDTO>(environment.APIEndpoint + this.type + "/update", userDTO)
+  }
+
 }

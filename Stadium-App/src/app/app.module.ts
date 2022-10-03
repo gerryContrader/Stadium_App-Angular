@@ -19,6 +19,8 @@ import { EditEventComponent } from './components/edit-event/edit-event.component
 import { TicketComponent } from './components/ticket/ticket.component';
 import { InsertEventComponent } from './components/insert-event/insert-event.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { InfoProfileComponent } from './components/info-profile/info-profile.component';
+
 
 
 
@@ -42,6 +44,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TicketComponent,
     InsertEventComponent,
     NavbarComponent,
+    InfoProfileComponent,
 
   ],
   imports: [
@@ -49,7 +52,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

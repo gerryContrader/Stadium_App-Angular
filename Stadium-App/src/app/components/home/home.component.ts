@@ -13,7 +13,6 @@ import { UserDTO } from 'src/models/userdto';
 })
 export class HomeComponent implements OnInit {
 
-
   constructor(private router: Router, private service: EventService, private ticketService: TicketService) { }
 
   public user!: UserDTO;
@@ -29,8 +28,10 @@ export class HomeComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
     if(this.user.usertype === "ADMIN"){
       this.service.getAllByUserId(this.user.id).subscribe(event => {
+
         this.event = event;
         console.log(event)
+
       });
     }
     else{

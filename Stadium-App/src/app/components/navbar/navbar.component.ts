@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDTO } from 'src/models/userdto';
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+user!: UserDTO[];
   constructor() { }
 
   ngOnInit(): void {

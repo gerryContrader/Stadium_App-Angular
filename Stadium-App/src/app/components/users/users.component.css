@@ -25,6 +25,8 @@ app-header::after {
 }
 .card{
   background-color: rgba(227, 227, 227, 0.778) !important;
+  margin-top: 2rem !important;
+  align-items: center !important;
 }
 
 #user ul li{
@@ -32,6 +34,8 @@ app-header::after {
 }
 .insert{
   display: flex !important;
+  flex-wrap: nowrap   !important;
+  flex-direction: column;
   justify-content: center !important;
   margin-top: 2rem !important;;
 

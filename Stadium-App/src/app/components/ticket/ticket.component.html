@@ -1,4 +1,5 @@
 <app-header></app-header>
+<div id="background"></div>
 <h1 style="text-align: center;">BIGLIETTI</h1>
 
 <div  id="ticket">
@@ -13,13 +14,13 @@
         <th scope="col">Elimina</th>
       </tr>
     </thead>
-    <tbody *ngFor="let ticket of ticket">
+    <tbody *ngFor="let tickets of ticket">
       <tr>
-        <th scope="row">{{ticket.id}}</th>
-        <td>{{ticket.purchaseDate}}</td>
-        <td>{{ticket.event.eventName}}</td>
-        <td>{{ticket.user.username}}</td>
-        <td><button class="btn btn-danger" (click)="delete(ticket)">Elimina</button></td>
+        <th scope="row">{{tickets.id}}</th>
+        <td>{{tickets.purchaseDate}}</td>
+        <td>{{tickets.event.eventName}}</td>
+        <td>{{tickets.user.username}}</td>
+        <td><button class="btn btn-danger" (click)="delete(tickets)">Elimina</button></td>
       </tr>
     </tbody>
   </table>
@@ -34,4 +35,6 @@
   </ul> -->
 </div>
 
-
+<div>
+<app-footer></app-footer>
+</div>
