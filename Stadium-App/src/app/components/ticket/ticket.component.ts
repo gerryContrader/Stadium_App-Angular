@@ -52,7 +52,4 @@ public user!: UserDTO;
     this.tickettoinsert = new TicketDTO();
   }
 
-  buyTicket(ticket: TicketDTO) {
-    this.service.buyTicket(ticket).subscribe(() => this.getTicket());
-  }
 }

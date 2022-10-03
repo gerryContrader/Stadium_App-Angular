@@ -52,7 +52,6 @@ export class InsertEventComponent implements OnInit {
         })
         
       }
-
     }
   }
 

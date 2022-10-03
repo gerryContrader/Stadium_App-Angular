@@ -21,7 +21,8 @@ export class RegisterComponent implements OnInit {
   public phone!: string;
   public name!: string;
   public surname!: string;
-  users: UserDTO[];
+  public users: UserDTO[];
+
   usertoinsert: UserDTO = new UserDTO();
   constructor(private router: Router, private service: UserService) { }
 
@@ -32,20 +33,13 @@ export class RegisterComponent implements OnInit {
     if (form.invalid) {
       return;
     }else{
-      this.router.navigate(['/login']);
-      this.insert(this.usertoinsert);
-
+      console.log(this.usertoinsert.usertype);
+      console.log(this.usertoinsert);
+        this.service.createUser(this.usertoinsert).subscribe(() =>
+          this.router.navigate(['/login'])
+        );
+      // 
     }
-  }
-
-  getUsers() {
-    this.service.getAll().subscribe(users => this.users = users);
-  }
-
-  insert(user: UserDTO) {
-
-    this.service.insert(this.usertoinsert).subscribe(() => this.getUsers());
-    alert("Registrazione avvenuta con Successo"+ "---BENVENUTO---"+"  "+ this.usertoinsert.username)
   }
 
 }
