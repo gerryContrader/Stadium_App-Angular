@@ -14,12 +14,19 @@
                                 </div> -->
                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">ID
                                 Utente associato<span class="text-danger"> *</span></label>
-                                <select [(ngModel)]="event.user" class="form-control" name="user">
-                                  <option *ngFor="let user of users" [ngValue]="user">{{user.username}}</option>
-                                </select>
+                                <input [(ngModel)]="user.id" class="form-control" name="user">
                                 <!-- <input type="text" [(ngModel)]="event.user" [ngModelOptions]="{standalone: true}" *ngfor="let user of users" #s="ngModel" id="lname" name="user" required> -->
                                 </div>
+<!--               Campo hidden                                  -->
+                                <!-- <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"></label>
+                                    <input [(ngModel)]="event.user" class="form-control" name="user" > -->
+                                    <!-- <input type="text" [(ngModel)]="event.user" [ngModelOptions]="{standalone: true}" *ngfor="let user of users" #s="ngModel" id="lname" name="user" required> -->
+                                    <!-- </div> -->
+<!--                                                 -->
                     </div>
+
+                    
+            
                     <!-- <div *ngIf="(s.touched || f.submitted) && s.invalid">
                         <p *ngIf="s.hasError('required')" class="error">Campo Obbligatorio
                         </p>
