@@ -13,12 +13,24 @@ export class HeaderComponent implements OnInit {
   searchword:string = '';
   event: EventDTO[];
   message:HTMLInputElement;
+
+
   public user!: UserDTO;
+  public role!: number;
+
   constructor(private service: EventService) { }
 
   ngOnInit(): void {
-    this.getEvents();
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
+    if(this.user.usertype==="USER"){
+      this.role = 2;
+    }else if(this.user.usertype==="ADMIN"){
+      this.role = 0;
+    }
+    else{
+      this.role = 1;
+    }
+    this.getEvents();
 
   }
 
