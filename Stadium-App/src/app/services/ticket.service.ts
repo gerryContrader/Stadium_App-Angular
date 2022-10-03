@@ -31,4 +31,8 @@ export class TicketService extends AbstractService<TicketDTO>  {
     public getAllByUserId(id: number): Observable<TicketDTO[]> {
       return this.http.get<TicketDTO[]>(environment.APIEndpoint + this.type + "/getmine?id=" + id)
     }
+
+    public deleteTicket(id: number):Observable <TicketDTO[]>{
+      return this.http.delete<TicketDTO[]>(environment.APIEndpoint+this.type+"/deleteticket?id="+id);
+    }
 }
