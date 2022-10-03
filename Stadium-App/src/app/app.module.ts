@@ -19,6 +19,7 @@ import { EditEventComponent } from './components/edit-event/edit-event.component
 import { TicketComponent } from './components/ticket/ticket.component';
 import { InsertEventComponent } from './components/insert-event/insert-event.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
 
 
 
@@ -42,6 +43,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TicketComponent,
     InsertEventComponent,
     NavbarComponent,
+    FavouriteComponent
 
   ],
   imports: [
