@@ -17,7 +17,7 @@
                                 <label class="form-label" for="typeEmailX" style="float:left">Username</label>
                                 <input type="text" id="typeEmailX" class="form-control" name="username"
                                     style="border-radius: 1rem; border-color: black;" placeholder="Pippo Baudo"
-                                    [(ngModel)]="username" #u="ngModel"
+                                    [(ngModel)]="username" #u="ngModel" [ngModelOptions]="{standalone: true}"
                                     [appForbidden]="['porcoDio', 'porcaMadonna', 'cazzo', 'culo']" required />
                             </div>
                             <div *ngIf="(u.touched || f.submitted) && u.invalid">
@@ -29,8 +29,8 @@
                             <div class="form-outline form-black mb-3">
                                 <label class="form-label" for="typePasswordX" style="float:left">Password</label>
                                 <input type="password" id="typePasswordX" class="form-control" name="password"
-                                    style="border-radius: 1rem; border-color: black;" placeholder="****************"
-                                    [(ngModel)]="password" #p="ngModel" required/>
+                                    style="border-radius: 1rem; border-color: black;" placeholder="****************"  autocomplete="on"
+                                    [(ngModel)]="password" [ngModelOptions]="{standalone: true}" #p="ngModel" required/>
                                    <!-- COPIA DA BLOCCO NOTE CLAUDIO QUESTA RIGA -->
                             </div>
                             <div *ngIf="(p.touched || f.submitted ) && p.invalid">

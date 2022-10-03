@@ -61,10 +61,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
- /* addFavourites(user: UserDTO, event: EventDTO){
-    this.service.addFavourites().subscribe(() => this.service.getAll());
-  }*/
-
 
   delete(event: EventDTO) {
     this.service.delete(event.id).subscribe(() => this.getEvents());
@@ -79,12 +75,8 @@ export class HomeComponent implements OnInit {
 
         this.ticketService.createTicket(this.singleTicket).subscribe();
         console.log(this.singleTicket);
-        this.router.navigate(['ticket']);
         })
       });
-
-
-
   }
 
   addFavourite(i:number){
@@ -100,10 +92,5 @@ export class HomeComponent implements OnInit {
 
 
   }
-
-
-
-
-
 
 }
