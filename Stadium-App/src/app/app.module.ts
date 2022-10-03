@@ -22,6 +22,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { InfoProfileComponent } from './components/info-profile/info-profile.component';
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { InsertUserComponent } from './components/insert-user/insert-user.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 
 
@@ -47,7 +48,8 @@ import { InsertUserComponent } from './components/insert-user/insert-user.compon
     NavbarComponent,
     InfoProfileComponent,
     FavouriteComponent,
-    InsertUserComponent
+    InsertUserComponent,
+    EditUserComponent
 
   ],
   imports: [

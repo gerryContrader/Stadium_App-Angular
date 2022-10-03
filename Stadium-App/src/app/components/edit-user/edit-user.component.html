@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="container px-1 py-5 mx-auto">
-  <p class="text-center tetet">Inserisci Utente</p>
+  <p class="text-center tetet">Aggiorna utente</p>
     <div class="row d-flex justify-content-center">
         <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
             <div class="card">
@@ -50,12 +50,13 @@
                                 <option ngValue="USER">{{"USER"}}</option>
                           </select>
                         </div>
+                        <input type="hidden" [(ngModel)]="user.id" [ngModelOptions]="{standalone: true}" #d="ngModel">
 
                   </div>
 
                     <div class="row justify-content-center">
                         <div class="form-group col-sm-6"> <button type="submit"
-                                class="btn-block btn-primary" (click)="handleSubmit(f)">Inserisci</button> </div>
+                                class="btn-block btn-primary" (click)="handleSubmit(f)">Aggiorna</button> </div>
                     </div>
 
                 </form>

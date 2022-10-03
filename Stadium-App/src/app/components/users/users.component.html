@@ -15,8 +15,8 @@
         <th scope="col">Nome</th>
         <th scope="col">Cognome</th>
         <th scope="col">Usertype</th>
+        <th scope="col">Modifica</th>
         <th scope="col">Elimina</th>
-        <!-- <th scope="col">Modifica</th> -->
         <th scope="col">info</th>
       </tr>
     </thead>
@@ -29,8 +29,9 @@
         <td>{{user.surname}}</td>
         <td>{{user.usertype}}</td>
 
-        <td><button class="btn btn-danger" (click)="delete(user)">Elimina</button></td>
+        <td><button class="btn btn-success" [routerLink]="['/edit-user', user.id]">Modifica</button></td>
         <!-- <td><button class="btn btn-info" (click)="switchEdit(user)">Modifica</button></td> -->
+        <td><button class="btn btn-primary" (click)="delete(user)">Elimina</button></td>
         <td><button class="btn btn-info" [routerLink]="['/info-profile', user.id]">Info</button></td>
         <div *ngIf="user.editing == true"><td>
           Username:<input [(ngModel)]="user.username">
