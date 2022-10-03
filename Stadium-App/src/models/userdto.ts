@@ -8,6 +8,7 @@ export class UserDTO {
     public email!: string;
     public name!: string;
     public surname!: string;
+    public propic!: Blob;
     public editing!: boolean;
     constructor(
     ) {}

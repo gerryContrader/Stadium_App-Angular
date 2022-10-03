@@ -10,14 +10,17 @@ import { UserDTO } from 'src/models/userdto';
 })
 export class ProfileComponent implements OnInit {
   ciao:String = "ciao"
+
   public users: UserDTO = new UserDTO();
   constructor(public service: UserService,private router: Router, private actRoute: ActivatedRoute,) { }
   public  userid:number;
   user!:UserDTO;
-
+  propicSrc!:String;
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
-
+    this.propicSrc = "data:image/png;base64,"+this.user.propic;
+    /* console.log(this.propicSrc); */
+    console.log(this.user.propic);
   }
 
 }
