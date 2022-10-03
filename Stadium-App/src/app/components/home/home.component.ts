@@ -79,13 +79,15 @@ export class HomeComponent implements OnInit {
 
         this.ticketService.createTicket(this.singleTicket).subscribe();
         console.log(this.singleTicket);
-        this.router.navigate(['ticket']);
+
         })
       });
 
 
 
   }
+
+
 
   addFavourite(i:number){
       this.userService.userRead(this.user.id).subscribe(y => {

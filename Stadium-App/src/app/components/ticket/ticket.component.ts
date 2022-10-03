@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketService } from 'src/app/services/ticket.service';
+import { EventDTO } from 'src/models/eventdto';
 import { TicketDTO } from 'src/models/ticketdto';
 import { UserDTO } from 'src/models/userdto';
 
@@ -10,6 +11,7 @@ import { UserDTO } from 'src/models/userdto';
 })
 export class TicketComponent implements OnInit {
 ticket: TicketDTO[]
+public event!: EventDTO[];
 tickettoinsert = new TicketDTO();
 public user!: UserDTO;
   constructor(private service: TicketService) { }
@@ -33,7 +35,7 @@ public user!: UserDTO;
     this.service.getAll().subscribe(ticket => this.ticket = ticket);
   }
 
-  delete(ticket:TicketDTO) {
+  deleteTicket(ticket: TicketDTO){
     this.service.delete(ticket.id).subscribe(() => this.getTicket());
   }
 
