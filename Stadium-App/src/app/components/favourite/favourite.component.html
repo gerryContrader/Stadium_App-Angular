@@ -9,6 +9,7 @@
             <th scope="col">#</th>
             <th scope="col">Utente</th>
             <th scope="col">Evento</th>
+            <th></th>
           </tr>
         </thead>
         <tbody *ngFor="let fav of favourite">
@@ -16,6 +17,7 @@
             <td>{{fav.id}}</td>
             <td>{{fav.user.username}}</td>
             <td>{{fav.event.eventName}}</td>
+            <td><button class="btn btn-danger" (click)="deleteFavourite(fav)">Elimina</button></td>
           </tr>
         </tbody>
       </table>
