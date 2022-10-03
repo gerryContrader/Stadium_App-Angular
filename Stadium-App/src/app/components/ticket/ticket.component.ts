@@ -36,7 +36,7 @@ public user!: UserDTO;
   }
 
   deleteTicket(ticket: TicketDTO){
-    this.service.delete(ticket.id).subscribe(() => this.getTicket());
+    this.service.deleteTicket(ticket.id).subscribe(() => this.getTicket());
   }
 
 
