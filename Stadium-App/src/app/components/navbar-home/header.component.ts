@@ -25,10 +25,10 @@ export class HeaderComponent implements OnInit {
     if(this.user.usertype==="USER"){
       this.role = 2;
     }else if(this.user.usertype==="ADMIN"){
-      this.role = 0;
+      this.role = 1;
     }
     else{
-      this.role = 1;
+      this.role = 0;
     }
     this.getEvents();
 

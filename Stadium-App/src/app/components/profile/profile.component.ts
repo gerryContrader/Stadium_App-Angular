@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   propicSrc!:String;
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
-    this.propicSrc = "data:image/png;base64,"+this.user.propic;
+    this.propicSrc = "data:image/png;base64,"+ this.user.propic;
     /* console.log(this.propicSrc); */
     console.log(this.user.propic);
   }
