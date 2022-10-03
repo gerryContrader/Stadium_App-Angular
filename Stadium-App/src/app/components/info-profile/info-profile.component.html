@@ -1,7 +1,7 @@
 <app-header></app-header>
-<div class="info-profile" style="text-align: center;">
-<h1>Info Profile {{users.name}}  {{users.surname}}</h1>
-<div class="container-fluid px-1 py-5 mx-auto">
+<!-- <div class="info-profile" style="text-align: center;">
+<h1>Info Profile {{users.name}}  {{users.surname}}</h1> -->
+<!-- <div class="container-fluid px-1 py-5 mx-auto">
   <div class="row d-flex justify-content-center">
       <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
           <h2 class="fw-bolder"> Utente: {{users.username}}</h2>
@@ -39,8 +39,39 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 
 
+<!-- </div> -->
+
+<div class="container rounded bg-white mt-5">
+  <div class="row">
+      <div class="col-md-4 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://yt3.ggpht.com/ytc/AMLnZu9tvAOMEu0JJzee23Z6gomHSqbVMJNMDjCBzXQ02A=s900-c-k-c0x00ffffff-no-rj" width="90"><span class="font-weight-bold">{{users.name}} {{users.surname}}</span><span class="text-black-50">{{users.email}}</span><span>{{users.address}}</span></div>
+      </div>
+      <div class="col-md-8">
+          <div class="p-3 py-5">
+
+              <div class="row mt-2">
+                  <div class="col-md-6"><p>{{users.name}}</p></div>
+                    <div class="col-md-6"><p>{{users.surname}}</p></div>
+                  <!-- <div class="col-md-6"><input type="text" class="form-control" placeholder="Nome" value={{users.name}}></div>
+                  <div class="col-md-6"><input type="text" class="form-control" value={{users.surname}} placeholder="Cognome"></div> -->
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-6"><p>{{users.email}}</p></div>
+                    <div class="col-md-6"><p>{{users.phone_number}}</p></div>
+                  <!-- <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value={{users.mail}}></div>
+                  <div class="col-md-6"><input type="text" class="form-control" value={{users.phone}} placeholder="Telefono"></div> -->
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6"><p>{{users.address}}</p></div>
+                  <!-- <div class="col-md-6"><input type="text" class="form-control" placeholder="inidirizzo" value={{users.address}}></div> -->
+              </div>
+
+              <!-- <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="button">Salva Informazioni</button></div> -->
+          </div>
+      </div>
+  </div>
 </div>
 <app-footer></app-footer>

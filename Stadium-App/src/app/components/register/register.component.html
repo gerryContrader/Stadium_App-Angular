@@ -39,7 +39,7 @@
                                 <label class="form-label" for="typeEmailX" style="float:left">E-mail</label>
                                 <input type="text" id="email" class="form-control" name="email"
                                     style="border-radius: 1rem; border-color: black;" placeholder="inserisci email"
-                                    [(ngModel)]="usertoinsert.mail" [ngModelOptions]="{standalone: true}" #e="ngModel"
+                                    [(ngModel)]="usertoinsert.email" [ngModelOptions]="{standalone: true}" #e="ngModel"
                                     [appForbidden]="['admin@admin.com', 'user@user.it', 'administrator@admin.it']"
                                     required />
                             </div>
@@ -74,7 +74,7 @@
                             <label class="form-label" for="phone" style="float:left">Num.telefono</label>
                             <input type="text" id="phoneNumber" class="form-control" name="username"
                                 style="border-radius: 1rem; border-color: black;" placeholder=" Numero Telefono"
-                                [(ngModel)]="usertoinsert.phone" [ngModelOptions]="{standalone: true}" #u="ngModel" required/>
+                                [(ngModel)]="usertoinsert.phone_number" [ngModelOptions]="{standalone: true}" #u="ngModel" required/>
                         </div>
                           <div class="form-outline form-black ">
                             <label for="usertype">Usertype</label><br>
