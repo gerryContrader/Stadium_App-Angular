@@ -20,7 +20,7 @@ export class InsertEventComponent implements OnInit {
   constructor(private router: Router, private service: EventService, private service_2: UserService) { }
 
 
-
+    public userInSession: UserDTO;
     public event: EventDTO = new EventDTO();
     public user: UserDTO = new UserDTO();
     public userId: number;
@@ -30,10 +30,15 @@ export class InsertEventComponent implements OnInit {
     public maxCapacity!: number;
     public stadiumName!: string;
     public eventDate!: Date;
+    public role!: number;
 
     ngOnInit(): void {
       // this.service_2.getAll()
       //     .subscribe(x=>this.users = x);
+      this.userInSession=JSON.parse(localStorage.getItem('currentUser')as string);
+      if(this.userInSession.usertype=="ADMIN"){
+        this.role=1;
+      }
 
     }
 
@@ -43,14 +48,25 @@ export class InsertEventComponent implements OnInit {
       } else {
         // console.log(this.user)
         //this.user =  this.service_2.userRead(this.user.id);
-        this.service_2.userRead(this.user.id).subscribe(x => {
-          this.user = x
-          this.event.user = x;
-          this.service.createEvent(this.event).subscribe(() => {
-            this.router.navigate(['home'])
+        if(this.role==1){
+          this.service_2.userRead(this.userInSession.id).subscribe(x => {
+            this.user = x
+            this.event.user = x;
+            this.service.createEvent(this.event).subscribe(() => {
+              this.router.navigate(['home'])
+            })
           })
-        })
-        
+        }
+        else{
+          this.service_2.userRead(this.user.id).subscribe(x => {
+            this.user = x
+            this.event.user = x;
+            this.service.createEvent(this.event).subscribe(() => {
+              this.router.navigate(['home'])
+            })
+          })
+        }
+
       }
     }
   }
