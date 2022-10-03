@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<div class="container px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="card">
+                <form (ngSubmit)="handleSubmit(f)" #f="ngForm" class="form-card" onsubmit="user.preventDefault()">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Username
+                                <span class="text-danger"> *</span></label> <input type="text" id="fname"
+                                name="username" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}" #n="ngModel" required> </div>
+
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Password
+                                  <span class="text-danger"> *</span></label> <input type="text" id="fname"
+                                  name="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" #n="ngModel" required> </div>
+                    </div>
+
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Nome</label> <input type="text" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" #l="ngModel" id="name" name="name"
+
+                                > </div>
+
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Cognome</label> <input type="text" [(ngModel)]="user.surname" [ngModelOptions]="{standalone: true}" #m="ngModel" id="surname" name="surname">
+                                  </div>
+
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">eMail</label> <input
+                                type="text" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" #t="ngModel" id="email" name="email"> </div>
+
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                class="form-control-label px-3">Numero di telefono</label> <input
+                                type="text" [(ngModel)]="user.phone_number" [ngModelOptions]="{standalone: true}" #d="ngModel" id="phone_number" name="phone_number"> </div>
+
+                    </div>
+                    <div class="row justify-content-between text-left">
+                      <div class="form-group col-sm-6 flex-column d-flex"> <label
+                              class="form-control-label px-3">Indirizzo</label> <input
+                              type="text" [(ngModel)]="user.address" [ngModelOptions]="{standalone: true}" #t="ngModel" id="address" name="address"> </div>
+
+                      <div class="form-group col-sm-6 flex-column d-flex"> <label
+                              class="form-control-label px-3">Tipo<span class="text-danger"> *</span></label>
+
+                              <select placeholder="usertype" [(ngModel)]="user.usertype" [ngModelOptions]="{standalone: true}" required>
+                                <option ngValue="ADMINISTRATOR">{{"ADMINISTRATOR"}}</option>
+                                <option ngValue="ADMIN">{{"ADMIN"}}</option>
+                                <option ngValue="USER">{{"USER"}}</option>
+                          </select>
+                        </div>
+
+                  </div>
+
+                    <div class="row justify-content-center">
+                        <div class="form-group col-sm-6"> <button type="submit"
+                                class="btn-block btn-primary" (click)="handleSubmit(f)">Inserisci</button> </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+  <app-footer></app-footer>
+</div>
+

@@ -5,6 +5,7 @@
 
 <div style="text-align:center ;"  id="user">
   <h1>Utenti</h1>
+  <button type="button" style="margin-bottom:2%; margin-top: 2%;" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" [routerLink]="'/insert-user'">Inserisci Utente</button>
   <table class="table">
     <thead>
       <tr>
@@ -45,50 +46,5 @@
 
   </div>
 
-
-<div *ngIf="userin.usertype =='ADMINISTRATOR'" class=" card"   >
-  <h1>Inserisci Nuovo Utente</h1>
-<div  class="insert card-body " style=" padding: auto; text-align: center;"><tr>
-  <td>
-    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="Name" [(ngModel)]="usertoinsert.name">
-  </td>
-  <br>
-  <td>
-    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="Surname" [(ngModel)]="usertoinsert.surname">
-  </td>
-  <br>
-  <td>
-    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="phone number" [(ngModel)]="usertoinsert.phone_number">
-  </td>
-  <br>
-  <td>
-    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="Address" [(ngModel)]="usertoinsert.address">
-  </td>
-  <br>
-  <td>
-    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="username" [(ngModel)]="usertoinsert.username">
-  </td>
-  <br>
-  <td>
-    <input style="height:2rem ;width:20rem;border-radius: 3px;" placeholder="password" [(ngModel)]="usertoinsert.password">
-  </td>
-  <br>
-  <td>
-    <select  style="height:2rem ;width:4.5rem;border-radius: 3px;" placeholder="usertype" [(ngModel)]="usertoinsert.usertype">
-      <option value="ADMIN">ADMIN</option>
-      <option value="USER">USER</option>
-    </select>
-  </td>
-
-
-  <td>
-    <button class="btn btn-info" (click)="insert(usertoinsert)">Insert</button>
-  </td>
-
-  <td>
-    <button class="btn btn-info" (click)="clear()">Clear</button>
-  </td>
-</tr></div>
-</div>
 
   <app-footer></app-footer>

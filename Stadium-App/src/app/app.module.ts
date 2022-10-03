@@ -21,6 +21,7 @@ import { InsertEventComponent } from './components/insert-event/insert-event.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InfoProfileComponent } from './components/info-profile/info-profile.component';
 import { FavouriteComponent } from './components/favourite/favourite.component';
+import { InsertUserComponent } from './components/insert-user/insert-user.component';
 
 
 
@@ -45,7 +46,8 @@ import { FavouriteComponent } from './components/favourite/favourite.component';
     InsertEventComponent,
     NavbarComponent,
     InfoProfileComponent,
-    FavouriteComponent
+    FavouriteComponent,
+    InsertUserComponent
 
   ],
   imports: [
