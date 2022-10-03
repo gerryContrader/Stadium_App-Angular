@@ -44,7 +44,7 @@
 
 <!-- </div> -->
 
-<div class="container rounded bg-white mt-5">
+<div class="container rounded bg-white mt-5 min-vh-100">
   <div class="row">
       <div class="col-md-4 border-right">
           <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://yt3.ggpht.com/ytc/AMLnZu9tvAOMEu0JJzee23Z6gomHSqbVMJNMDjCBzXQ02A=s900-c-k-c0x00ffffff-no-rj" width="90"><span class="font-weight-bold">{{users.name}} {{users.surname}}</span><span class="text-black-50">{{users.email}}</span><span>{{users.address}}</span></div>
@@ -53,19 +53,34 @@
           <div class="p-3 py-5">
 
               <div class="row mt-2">
-                  <div class="col-md-6"><p>{{users.name}}</p></div>
-                    <div class="col-md-6"><p>{{users.surname}}</p></div>
+                  <div class="col-md-6">
+                    <p class="font-weight-light">Nome</p>
+                    <p class="infotext">{{users.name}}</p>
+                  </div>
+                    <div class="col-md-6">
+                      <p class="font-weight-light">Cognome</p>
+                      <p class="infotext">{{users.surname}}</p>
+                    </div>
                   <!-- <div class="col-md-6"><input type="text" class="form-control" placeholder="Nome" value={{users.name}}></div>
                   <div class="col-md-6"><input type="text" class="form-control" value={{users.surname}} placeholder="Cognome"></div> -->
               </div>
               <div class="row mt-3">
-                  <div class="col-md-6"><p>{{users.email}}</p></div>
-                    <div class="col-md-6"><p>{{users.phone_number}}</p></div>
+                  <div class="col-md-6">
+                    <p class="font-weight-light">e-Mail</p>
+                    <p class="infotext">{{users.email}}</p>
+                  </div>
+                    <div class="col-md-6">
+                      <p class="font-weight-light">Telefono</p>
+                      <p class="infotext">{{users.phone_number}}</p>
+                  </div>
                   <!-- <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value={{users.mail}}></div>
                   <div class="col-md-6"><input type="text" class="form-control" value={{users.phone}} placeholder="Telefono"></div> -->
               </div>
               <div class="row mt-3">
-                <div class="col-md-6"><p>{{users.address}}</p></div>
+                <div class="col-md-6">
+                  <p class="font-weight-light">Indirizzo</p>
+                  <p class="infotext">{{users.address}}</p>
+                </div>
                   <!-- <div class="col-md-6"><input type="text" class="form-control" placeholder="inidirizzo" value={{users.address}}></div> -->
               </div>
 
