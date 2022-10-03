@@ -31,6 +31,7 @@ export class InfoProfileComponent implements OnInit {
       this.users = user
 
     this.service.read(this.userid);
+    console.log(user);
     })
 
   }

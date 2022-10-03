@@ -9,30 +9,30 @@
               <form (ngSubmit)="handleSubmit(f)" #f="ngForm" class="form-card" onsubmit="event.preventDefault()">
                   <div class="row justify-content-between text-left">
                       <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nome
-                              </label> <input type="text" id="fname"
+                              </label> <input type="text" readonly id="fname"
                               name="name" [(ngModel)]="users.name" [ngModelOptions]="{standalone: true}" #n="ngModel"> </div>
                       <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">
-                              cognome</label> <input type="text" [(ngModel)]="users.surname" [ngModelOptions]="{standalone: true}" #s="ngModel"
+                              cognome</label> <input readonly type="text" [(ngModel)]="users.surname" [ngModelOptions]="{standalone: true}" #s="ngModel"
                               id="lname" name="userId"> </div>
                   </div>
                   <div class="row justify-content-between text-left">
                       <div class="form-group col-sm-6 flex-column d-flex"> <label
-                              class="form-control-label px-3">Email</label> <input type="text" [(ngModel)]="users.mail" [ngModelOptions]="{standalone: true}" #l="ngModel" id="email" name="placesAvailable"
+                              class="form-control-label px-3">Email</label> <input readonly type="text" [(ngModel)]="users.mail" [ngModelOptions]="{standalone: true}" #l="ngModel" id="email" name="placesAvailable"
 
                               > </div>
                       <div class="form-group col-sm-6 flex-column d-flex"> <label
-                              class="form-control-label px-3">Indirizzo</label> <input type="text" [(ngModel)]="users.address" [ngModelOptions]="{standalone: true}" #m="ngModel" id="mob" name="maxCapacity"
+                              class="form-control-label px-3">Indirizzo</label> <input readonly type="text" [(ngModel)]="users.address" [ngModelOptions]="{standalone: true}" #m="ngModel" id="mob" name="maxCapacity"
                               > </div>
                   </div>
                   <div class="row justify-content-between text-left">
                       <div class="form-group col-sm-6 flex-column d-flex"> <label
-                              class="form-control-label px-3">Alias</label> <input
+                              class="form-control-label px-3">Alias</label> <input readonly
                               type="text" [(ngModel)]="users.username" [ngModelOptions]="{standalone: true}" #t="ngModel" id="job" name="stadiumName"> </div>
                       <div class="form-group col-sm-6 flex-column d-flex"> <label
-                              class="form-control-label px-3">Telefono</label> <input
+                              class="form-control-label px-3">Telefono</label> <input readonly
                               type="text" [(ngModel)]="users.phone" [ngModelOptions]="{standalone: true}" #d="ngModel" id="mob" name="eventDate"> </div>
                   </div>
-                  <input type="hidden" [(ngModel)]="users.id" [ngModelOptions]="{standalone: true}" #d="ngModel">
+                  <input readonly type="hidden" [(ngModel)]="users.id" [ngModelOptions]="{standalone: true}" #d="ngModel">
                   <div class="row justify-content-center">
                       <div class="form-group col-sm-6"> <button type="submit"
                               class="btn-block btn-primary" (click)="handleSubmit(f)">Salva</button> </div>

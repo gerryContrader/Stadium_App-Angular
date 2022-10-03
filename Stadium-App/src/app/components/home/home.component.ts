@@ -62,13 +62,13 @@ export class HomeComponent implements OnInit {
   }
 
   buyTicket(ticket:TicketDTO) {
-    this.ticketService.buyTicket(ticket).subscribe(() => this.ticketService.insert(ticket));
+    this.ticketService.createTicket(ticket).subscribe(() => this.ticketService.insert(ticket));
     console.log(ticket);
 
 
   }
 
-  
+
 
 
 
