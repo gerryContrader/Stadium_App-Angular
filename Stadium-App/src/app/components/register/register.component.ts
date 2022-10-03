@@ -11,7 +11,7 @@ import { UserDTO } from 'src/models/userdto';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+public prova: string;
   public username!: string;
   public password!: string;
   public mail!: string;
