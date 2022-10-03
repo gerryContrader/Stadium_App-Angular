@@ -78,46 +78,71 @@
   </div>
 
 <div class="container mt-5">
-  <h2>I tuoi ticket</h2>
-  <div class="row">
-    <div class="col-12 card">
+  <h2>I tuoi ultimi ticket</h2>
+  <div *ngFor="let ticket of tickets index as i" class="row my-3">
+    <div *ngIf="i<3" class="col-12 card">
       <div class="row">
         <div class="col-12 col-md-4 text-center pt-3 testi">
-          <p>Inter - Milan</p>
-          <p>01/09/2022 ore 21:00</p>
+          <p>{{ticket.event.eventName}}</p>
+          <p>{{ticket.event.eventDate}}</p>
         </div>
 
         <div class="col-12 col-md-4 text-center pt-3 testi">
-          <p>Stadio San Siro</p>
-          <p>Acquisto il : 10/08/2022</p>
+          <p>{{ticket.event.stadiumName}}</p>
+          <p>Acquisto il : {{ticket.purchaseDate}}</p>
         </div>
 
         <div class="col-12 col-md-4 text-right pt-4 pr-5">
           <a href="#" class="btn blub">Dettagli</a>
         </div>
+
       </div>
+
     </div>
   </div>
+  <div class="row">
+    <div class="col-12 col-md-4 text-right pt-4 pr-5">
+
+    </div>
+    <div class="col-12 col-md-4 text-center pt-4 pr-5">
+      <a href="#" class="btn blub ">Mostra altro</a>
+    </div>
+    <div class="col-12 col-md-4 text-right pt-4 pr-5">
+
+    </div>
+  </div>
+
 </div>
 
 <div class="container mt-5">
   <h2 class="text-right mt-5">I tuoi preferiti</h2>
-  <div class="row">
-    <div class="col-12 card">
+  <div *ngFor="let favourite of favourites index as i" class="row my-3">
+    <div *ngIf="i<3" class="col-12 card">
       <div class="row">
         <div class="col-12 col-md-4 text-center pt-3 testi">
-          <p>Inter - Milan</p>
-          <p>01/09/2022 ore 21:00</p>
+          <p>{{favourite.event.eventName}}</p>
+          <p>{{favourite.event.eventDate}}</p>
         </div>
 
         <div class="col-12 col-md-4 text-center pt-3 testi">
-
+          <p class="pt-4">{{favourite.event.stadiumName}}</p>
         </div>
 
         <div class="col-12 col-md-4 text-right pt-4 pr-5">
-          <a href="#" class="btn btn-danger ">Rimuovi</a>
+          <button class="btn btn-danger" (click)="deleteFavourite(favourite)">Elimina</button>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 text-right pt-4 pr-5">
+
+    </div>
+    <div class="col-12 col-md-4 text-center pt-4 pr-5">
+      <a href="#" class="btn blub mb-5">Mostra altro</a>
+    </div>
+    <div class="col-12 col-md-4 text-right pt-4 pr-5">
+
     </div>
   </div>
 </div>

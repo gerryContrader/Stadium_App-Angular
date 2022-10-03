@@ -17,6 +17,9 @@ font-weight: bold;
 }
 
 
+
+
+
 .form-control:focus {
   box-shadow: none;
   border-color: #BA68C8;
@@ -52,6 +55,7 @@ font-weight: bold;
   background-color: #f2f2f272;
   height: 100px;
   box-shadow: -1px -2px 32px 5px rgba(0,0,0,0.11);
+
 }
 
 .testi{
