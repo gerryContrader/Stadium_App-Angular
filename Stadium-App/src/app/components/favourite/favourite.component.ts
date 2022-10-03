@@ -19,10 +19,18 @@ export class FavouriteComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
+    this.getFavourites();
+  }
+
+  getFavourites() {
     this.service.getAllByUserId(this.user.id).subscribe(event => {
       this.favourite = event;
       console.log(event)
     });
+  }
+
+  deleteFavourite(favourite: FavouriteDTO){
+    this.service.delete(favourite.id).subscribe(() => this.getFavourites());
   }
 
 }
