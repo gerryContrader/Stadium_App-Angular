@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FavouriteDTO } from 'src/models/favouritedto';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject} from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AbstractService } from './abstract.service';
 import { HttpClient } from '@angular/common/http';
@@ -17,6 +17,10 @@ constructor(http: HttpClient) {
 
 public getAllByUserId(id: number): Observable<FavouriteDTO[]> {
   return this.http.get<FavouriteDTO[]>(environment.APIEndpoint + this.type + "/getmine?id=" + id)
+}
+
+public createFavourite(favourite: FavouriteDTO): Observable<FavouriteDTO> {
+  return this.http.post<FavouriteDTO>(environment.APIEndpoint + this.type + '/insert', favourite)
 }
 
 }

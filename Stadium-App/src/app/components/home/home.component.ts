@@ -1,8 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
+import { FavouriteService } from 'src/app/services/favourite.service';
 import { TicketService } from 'src/app/services/ticket.service';
+import { UserService } from 'src/app/services/user.service';
 import { EventDTO } from 'src/models/eventdto';
+import { FavouriteDTO } from 'src/models/favouritedto';
 import { TicketDTO } from 'src/models/ticketdto';
 import { UserDTO } from 'src/models/userdto';
 
@@ -13,7 +16,7 @@ import { UserDTO } from 'src/models/userdto';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private service: EventService, private ticketService: TicketService) { }
+  constructor(private router: Router, private service: EventService, private ticketService: TicketService, private userService: UserService, private favouriteService:FavouriteService) { }
 
   public user!: UserDTO;
   public event!: EventDTO[];
@@ -21,7 +24,12 @@ export class HomeComponent implements OnInit {
 
 
 
-  public singleEvent: EventDTO = new EventDTO;
+  public singleEvent: EventDTO = new EventDTO();
+  public singleUser: UserDTO = new UserDTO();
+  public favourite: FavouriteDTO = new FavouriteDTO();
+
+  public x:UserDTO = new UserDTO();
+
   public role!: number;
 
   ngOnInit(): void {
@@ -67,6 +75,21 @@ export class HomeComponent implements OnInit {
 
 
   }
+
+  addFavourite(i:number){
+      this.userService.userRead(this.user.id).subscribe(y => {
+      this.x = y
+      this.favourite.user = this.x;
+      this.service.eventRead(this.event[i].id).subscribe(y=>{
+        this.favourite.event = y;
+        this.favouriteService.createFavourite(this.favourite).subscribe();
+        console.log(this.favourite);
+        })
+      });
+
+
+  }
+
 
 
 
