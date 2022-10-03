@@ -64,7 +64,7 @@
         <td>{{event.maxCapacity}}</td>
         <td>{{event.placesAvailable}}</td>
         <!-- <td>{{event.ticket}}</td> -->
-        <td *ngIf="role==2"><button  class="btn btn-danger" routerLink="/ticket"  routerLinkActive="ticket" (click)="buyTicket(event.ticket)">Acquista</button></td>
+        <td *ngIf="role==2"><button  class="btn btn-danger" (click)="buyTicket(i)">Acquista</button></td>
         <td *ngIf="role!=2"><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
         <td *ngIf="role!=2"><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
         <td *ngIf="role==2"><button class="btn btn-primary"(click)="addFavourite(i)">Aggiungi</button></td>

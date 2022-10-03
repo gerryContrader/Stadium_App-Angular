@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
   public singleEvent: EventDTO = new EventDTO();
   public singleUser: UserDTO = new UserDTO();
   public favourite: FavouriteDTO = new FavouriteDTO();
+  public singleTicket: TicketDTO = new TicketDTO();
 
   public x:UserDTO = new UserDTO();
 
@@ -69,9 +70,19 @@ export class HomeComponent implements OnInit {
     this.service.delete(event.id).subscribe(() => this.getEvents());
   }
 
-  buyTicket(ticket:TicketDTO) {
-    this.ticketService.createTicket(ticket).subscribe(() => this.ticketService.insert(ticket));
-    console.log(ticket);
+  buyTicket(i:number) {
+    this.service.eventRead(this.event[i].id).subscribe(y=>{
+        this.singleTicket.event = y;
+    this.userService.userRead(this.user.id).subscribe(y => {
+      this.x = y
+      this.singleTicket.user = this.x;
+
+        this.ticketService.createTicket(this.singleTicket).subscribe();
+        console.log(this.singleTicket);
+        this.router.navigate(['ticket']);
+        })
+      });
+
 
 
   }
