@@ -20,7 +20,7 @@ import { TicketComponent } from './components/ticket/ticket.component';
 import { InsertEventComponent } from './components/insert-event/insert-event.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InfoProfileComponent } from './components/info-profile/info-profile.component';
-
+import { FavouriteComponent } from './components/favourite/favourite.component';
 
 
 
@@ -45,6 +45,7 @@ import { InfoProfileComponent } from './components/info-profile/info-profile.com
     InsertEventComponent,
     NavbarComponent,
     InfoProfileComponent,
+    FavouriteComponent
 
   ],
   imports: [

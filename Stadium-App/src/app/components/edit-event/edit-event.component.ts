@@ -18,7 +18,7 @@ export class EditEventComponent implements OnInit {
   public eventId: number;
   public event: EventDTO = new EventDTO();
   public user!: UserDTO;
-
+  public role!: number;
   public name!: string;
   public placesAvailable: number;
   public maxCapacity!: number;
@@ -31,6 +31,13 @@ export class EditEventComponent implements OnInit {
     this.service.eventRead(this.eventId).subscribe(event => {
       this.event = event
     })
+    if(this.user.usertype==="ADMINISTRATOR"){
+      this.role = 0;
+    }
+    else{
+      this.role = 1;
+    }
+
   }
   public handleSubmit(form: NgForm): void {
     if (form.invalid) {

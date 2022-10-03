@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { UsersComponent } from './components/users/users.component';
+import { FavouriteComponent } from './components/favourite/favourite.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'ticket', component:TicketComponent},
   { path: 'edit-event/:id', component: EditEventComponent},
   {path: 'insert-event', component:InsertEventComponent},
+  {path: 'favourite/:id', component:FavouriteComponent},
 
 
 
