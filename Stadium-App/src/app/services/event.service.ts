@@ -41,5 +41,13 @@ export class EventService extends AbstractService<EventDTO>{
     return this.http.get<EventDTO[]>(environment.APIEndpoint + this.type + "/getmine?id=" + id)
   }
 
+  public searchEventsByEventNameContaining(name:string) : Observable<EventDTO[]>{
+    return this.http.get<EventDTO[]>(environment.APIEndpoint + this.type + "/filter?name=" + name)
+  }
+
+  public getAllforUser(id: number): Observable<EventDTO[]> {
+    return this.http.get<EventDTO[]>(environment.APIEndpoint + this.type + "/getallforuser?id=" + id)
+  }
+
 }
 

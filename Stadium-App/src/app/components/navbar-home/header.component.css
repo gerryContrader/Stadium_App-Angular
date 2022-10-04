@@ -49,3 +49,19 @@
   }
   
 }
+
+.logo-image {
+  width: 28px;
+}
+
+.welcome {
+  color: white !important;
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+  .welcome {
+    display:none;
+  }
+}

@@ -2,14 +2,21 @@
 <app-header></app-header>
 <div class="img">
 </div>
-<div style="text-align: center;"><h1> Benvenuto   {{user.username}}</h1></div>
+<!-- <div style="text-align: center;"><h1> Benvenuto   {{user.username}}</h1></div> -->
   <div id="container" style="text-align:center;">
 
 
-  <div class="dropdown">
-
+<div class="dropdown">
+  <div class="container-fluid">
+    <div class="row">
+     <div class="col-12 col-md-3 xxx">
+       <div class="d-flex form-inputs">
+           <input class="form-control" type="text" placeholder="Cerca..."[(ngModel)]="searchText">
+     </div>
+    </div>
+  </div>
 <div id="teams" style="text-align: center;">
-  <button type="button" style="margin-bottom:2%; margin-top: 2%; float: left;" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" [routerLink]="'/insert-event'">Crea Evento</button>
+  <button type="button" style="margin-bottom:2%; margin-top: 2%;" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" [routerLink]="'/insert-event'">Crea Evento</button>
 
   <table class="table">
     <thead>
@@ -27,7 +34,7 @@
         <th *ngIf="role==2" scope="col">Preferiti</th>
       </tr>
     </thead>
-    <tbody *ngFor="let event of event; index as i">
+    <tbody *ngFor="let event of event | filter:searchText; index as i">
       <tr>
         <th scope="row">{{event.id}}</th>
         <td>{{event.user.id}}</td>
@@ -37,10 +44,10 @@
         <td>{{event.maxCapacity}}</td>
         <td>{{event.placesAvailable}}</td>
         <!-- <td>{{event.ticket}}</td> -->
-        <td *ngIf="role==2"><button  class="btn btn-danger" (click)="buyTicket(i)">Acquista</button></td>
+        <td *ngIf="role==2"><button *ngIf="event.placesAvailable>0" class="btn btn-danger" (click)="buyTicket(i)"routerLink='/ticket'>Acquista</button>    <p class="exa mt-2" *ngIf="event.placesAvailable<=0">ESAURITO</p></td>
         <td *ngIf="role!=2"><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
         <td *ngIf="role!=2"><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
-        <td *ngIf="role==2"><button class="btn btn-primary"(click)="addFavourite(i)">Aggiungi</button></td>
+        <td *ngIf="role==2"><button *ngIf="event.favourite==false" class="btn btn-primary"(click)="addFavourite(i)" routerLink='/favourites'>Aggiungi</button> <p class="exax mt-2" *ngIf="event.favourite==true">GIA' AGGIUNTO</p></td>
       </tr>
     </tbody>
     </table>
