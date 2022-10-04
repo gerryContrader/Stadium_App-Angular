@@ -61,4 +61,43 @@
       </div>
     </div>
   </div>
-  <app-footer></app-footer>
+<div id="teams" style="text-align: center;">
+  <button *ngIf="user.usertype != 'USER'" type="button" style="margin-bottom:2%; margin-top: 2%;" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true" [routerLink]="'/insert-event'">Crea Evento</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Creatore dell'evento</th>
+        <th scope="col">Evento</th>
+        <th scope="col">Stadio</th>
+        <th scope="col">Data</th>
+        <th scope="col">Capienza Massima</th>
+        <th scope="col">Posti Disponibili</th>
+        <th *ngIf="role==2"scope="col">Acquista</th>
+        <th *ngIf="role!=2" scope="col">Modifica</th>
+        <th *ngIf="role!=2" scope="col">Elimina</th>
+        <th *ngIf="role==2" scope="col">Preferiti</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let event of event | filter:searchText; index as i">
+      <tr>
+        <th scope="row">{{event.id}}</th>
+        <td>{{event.user.id}}</td>
+        <td>{{event.eventName}}</td>
+        <td>{{event.stadiumName}}</td>
+        <td>{{event.eventDate}}</td>
+        <td>{{event.maxCapacity}}</td>
+        <td>{{event.placesAvailable}}</td>
+        <!-- <td>{{event.ticket}}</td> -->
+        <td *ngIf="role==2"><button *ngIf="event.placesAvailable>0" class="btn btn-danger" (click)="buyTicket(i)">Acquista</button>    <p class="exa mt-2" *ngIf="event.placesAvailable<=0">ESAURITO</p></td>
+        <td *ngIf="role!=2"><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
+        <td *ngIf="role!=2"><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
+        <td *ngIf="role==2"><button *ngIf="event.favourite==false" class="btn btn-primary"(click)="addFavourite(i)">Aggiungi</button> <p class="exax mt-2" *ngIf="event.favourite==true">GIA' AGGIUNTO</p></td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
+  </div>
+<app-footer></app-footer>
+
