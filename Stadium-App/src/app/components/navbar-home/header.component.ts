@@ -1,4 +1,4 @@
-import { Component,Input, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, Input, EventEmitter, OnInit, Output } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { EventDTO } from 'src/models/eventdto';
 import { UserDTO } from 'src/models/userdto';
@@ -10,24 +10,26 @@ import { UserDTO } from 'src/models/userdto';
 })
 export class HeaderComponent implements OnInit {
   @Output() searchcriteria = new EventEmitter<String>();
-  searchword:string = '';
+  searchword: string = '';
   event: EventDTO[];
-  message:HTMLInputElement;
+  message: HTMLInputElement;
 
 
   public user!: UserDTO;
   public role!: number;
+  public propicSrc!: string;
 
   constructor(private service: EventService) { }
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
-    if(this.user.usertype==="USER"){
+    this.propicSrc = "data:image/png;base64,"+ this.user.propic;
+    if (this.user.usertype === "USER") {
       this.role = 2;
-    }else if(this.user.usertype==="ADMIN"){
+    } else if (this.user.usertype === "ADMIN") {
       this.role = 1;
     }
-    else{
+    else {
       this.role = 0;
     }
     this.getEvents();
