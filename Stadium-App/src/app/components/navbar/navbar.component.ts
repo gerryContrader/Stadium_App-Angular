@@ -7,10 +7,13 @@ import { UserDTO } from 'src/models/userdto';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-user!: UserDTO[];
+
+  public user!: UserDTO;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('currentUser') as string);
   }
 
 }

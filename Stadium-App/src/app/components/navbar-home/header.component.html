@@ -7,17 +7,17 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div *ngIf="role == 2" class="collapse navbar-collapse" id="navbarSupportedContent" style=" margin-right: 50px;">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 180px;"  >
-          <li class="nav-item" style="margin-right: -170px;">
-            <a class="nav-link active" [routerLink]="['/favourite', user.id]" style="margin-top: 12px;" aria-current="page" href="#">Preferiti</a>
+      <div *ngIf="role == 2" class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end; margin-right: 90px;">
+        <ul class="navbar-nav me-auto mb-2 "  >
+          <li class="nav-item">
+            <a style="margin-top:11px" class="nav-link active"  aria-current="page" [routerLink]="['/favourite', user.id]">Preferiti</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/ticket" style="margin-top: 12px; margin-left: 170px;" routerLinkActive="ticket">Ticket</a>
+            <a style="margin-top:11px" class="nav-link" routerLink="/ticket"  routerLinkActive="ticket">Ticket</a>
           </li>
           <li class="nav-item dropdown">
-            <a style="margin-left:180%" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img style="margin-left: -10px;" class="logo-image" src="{{propicSrc}}">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="logo-image" src="{{propicSrc}}">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="profile">Visualizza Profilo</a></li>
@@ -27,14 +27,14 @@
           </li>
         </ul>
       </div>
-      <div *ngIf="role == 0" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div *ngIf="role == 0" class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end; margin-right: 90px;">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/users" style="margin-top: 4px; margin-left: 200px;" routerLinkActive="users">Utenti</a>
+            <a class="nav-link" routerLink="/users">Utenti</a>
           </li>
           <li class="nav-item dropdown">
-            <a style="margin-left:180%" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img style="margin-left: -15px; border-radius:50%" class="logo-image" src="{{propicSrc}}">
+            <a  class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img style="margin-left: 15px; border-radius:50%" class="logo-image" src="{{propicSrc}}">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="profile">Visualizza Profilo</a></li>
@@ -44,10 +44,10 @@
           </li>
         </ul>
       </div>
-      <div *ngIf="role == 1" class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 240px;">
+      <div *ngIf="role == 1" class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end; margin-right: 90px;">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
-            <a style="margin-left:180%" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="logo-image" src="{{propicSrc}}">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
