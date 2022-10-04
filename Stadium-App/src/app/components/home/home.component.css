@@ -68,6 +68,10 @@ app-header {
   align-items:center;
   justify-content:center;
 }
+.exa{
+  color: red;
+  font-weight: bold;
+}
 .xxx{
   padding-left: 65px;
 }
