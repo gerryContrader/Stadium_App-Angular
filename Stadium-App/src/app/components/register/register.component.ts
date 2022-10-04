@@ -38,7 +38,7 @@ public prova: string;
         this.service.createUser(this.usertoinsert).subscribe(() =>
           this.router.navigate(['/login'])
         );
-      // 
+      //
     }
   }
 
