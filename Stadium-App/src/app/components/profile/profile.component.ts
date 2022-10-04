@@ -41,4 +41,11 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  updateUser(user: UserDTO) {
+    this.service.editUser(this.user).subscribe(() => {
+      this.service.read(user.id)
+    })
+  }
+
+
 }
