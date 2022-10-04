@@ -80,8 +80,12 @@ export class HomeComponent implements OnInit {
       this.x = y
       this.singleTicket.user = this.x;
 
-        this.ticketService.createTicket(this.singleTicket).subscribe();
-        console.log(this.singleTicket);
+        this.ticketService.createTicket(this.singleTicket).subscribe(()=>{
+          this.service.getAllforUser(this.user.id).subscribe(event=>{
+            this.event=event;
+            console.log(event);
+           })
+        });
         })
       });
   }
@@ -95,9 +99,11 @@ export class HomeComponent implements OnInit {
       this.service.eventRead(this.event[i].id).subscribe(y=>{
         this.favourite.event = y;
         this.favouriteService.createFavourite(this.favourite).subscribe(()=>{
-          this.router.navigate(["/home"]);
+          this.service.getAllforUser(this.user.id).subscribe(event=>{
+            this.event=event;
+            console.log(event);
+           })
         })
-
         })
       })
 

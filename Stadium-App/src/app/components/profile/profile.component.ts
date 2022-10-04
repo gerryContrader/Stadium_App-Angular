@@ -37,8 +37,18 @@ export class ProfileComponent implements OnInit {
 
   deleteFavourite(favourite: FavouriteDTO){
     this.favouriteService.delete(favourite.id).subscribe(() => {
-      this.router.navigate(['profile'])
+      this.favouriteService.getAllByUserId(this.user.id).subscribe(x =>{
+        this.favourites = x;
+      })
     });
+  }
+
+  deleteTicket(ticket:TicketDTO){
+    this.ticketService.deleteTicket(ticket.id).subscribe(()=>{
+      this.ticketService.getAllByUserId(this.user.id).subscribe(x =>{
+        this.tickets = x;
+      })
+    })
   }
 
   updateUser(user: UserDTO) {

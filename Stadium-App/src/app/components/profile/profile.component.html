@@ -79,8 +79,9 @@
 
 <div class="container mt-5">
   <h2>I tuoi ultimi ticket</h2>
-  <div *ngFor="let ticket of tickets index as i" class="row my-3">
-    <div *ngIf="i<3" class="col-12 card">
+  <div *ngFor="let ticket of tickets index as i" >
+  <div *ngIf="i<3" class="row my-3">
+    <div class="col-12 card">
       <div class="row">
         <div class="col-12 col-md-4 text-center pt-3 testi">
           <p>{{ticket.event.eventName}}</p>
@@ -93,10 +94,11 @@
         </div>
 
         <div class="col-12 col-md-4 text-right pt-4 pr-5">
-          <a href="#" class="btn blub">Dettagli</a>
+          <button class="btn btn-danger" (click)="deleteTicket(ticket)">Elimina</button>
         </div>
 
       </div>
+    </div>
 
     </div>
   </div>
@@ -116,8 +118,9 @@
 
 <div class="container mt-5">
   <h2 class="text-right mt-5">I tuoi preferiti</h2>
-  <div *ngFor="let favourite of favourites index as i" class="row my-3">
-    <div *ngIf="i<3" class="col-12 card">
+  <div *ngFor="let favourite of favourites index as i" >
+  <div *ngIf="i<3" class="row my-3">
+    <div class="col-12 card">
       <div class="row">
         <div class="col-12 col-md-4 text-center pt-3 testi">
           <p>{{favourite.event.eventName}}</p>
@@ -133,6 +136,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div class="row">
     <div class="col-12 col-md-4 text-right pt-4 pr-5">
