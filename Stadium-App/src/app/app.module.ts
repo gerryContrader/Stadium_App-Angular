@@ -23,7 +23,7 @@ import { InfoProfileComponent } from './components/info-profile/info-profile.com
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { InsertUserComponent } from './components/insert-user/insert-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
-
+import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -58,6 +58,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule
 
   ],
   providers: [],

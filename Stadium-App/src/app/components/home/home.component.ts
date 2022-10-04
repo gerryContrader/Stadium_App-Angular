@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   public singleTicket: TicketDTO = new TicketDTO();
 
   public x:UserDTO = new UserDTO();
-
+  public searchText:any;
   public role!: number;
 
   ngOnInit(): void {
