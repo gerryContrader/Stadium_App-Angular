@@ -6,18 +6,48 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div *ngIf="role == 2" class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end; margin-right: 90px;">
+        <ul class="navbar-nav me-auto mb-2 "  >
+          <li class="nav-item">
+            <a style="margin-top:11px" class="nav-link active"  aria-current="page" [routerLink]="['/favourite', user.id]">Preferiti</a>
+          </li>
+          <li class="nav-item">
+            <a style="margin-top:11px" class="nav-link" routerLink="/ticket"  routerLinkActive="ticket">Ticket</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img style="border-radius:28px !important ;" class="logo-image" src="{{user.propic}}">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="profile">Visualizza Profilo</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="/login">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="role == 0" class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end; margin-right: 90px;">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['/favourite', user.id]">Preferiti</a>
+            <a class="nav-link" routerLink="/users">Utenti</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/ticket" routerLinkActive="ticket">Ticket</a>
-          </li>
-          <li ><a class="dropdown-item" routerLink="/user" routerLinkActive="user">Utenti</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="profile" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Profilo
+            <a  class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img style="margin-left: 15px; border-radius:50%" class="logo-image" src="{{user.propic}}">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="profile">Visualizza Profilo</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="/login">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="role == 1" class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end; margin-right: 90px;">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="logo-image" src="{{user.propic}}">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="profile">Visualizza Profilo</a></li>
@@ -29,3 +59,5 @@
       </div>
     </div>
   </nav>
+
+
