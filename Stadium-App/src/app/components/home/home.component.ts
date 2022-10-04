@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
       this.service.eventRead(this.event[i].id).subscribe(y=>{
         this.favourite.event = y;
         this.favouriteService.createFavourite(this.favourite).subscribe(()=>{
-          this.router.navigate(["home"]);
+          this.router.navigate(["/home"]);
         })
 
         })

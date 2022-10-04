@@ -17,7 +17,7 @@ export class TicketService extends AbstractService<TicketDTO>  {
 
 
     public createTicket(ticketDTO: TicketDTO): Observable<TicketDTO> {
-      return this.http.post<TicketDTO>(environment.APIEndpoint + this.type + '/insert', ticketDTO)
+      return this.http.post<TicketDTO>(environment.APIEndpoint + this.type + '/buyticket', ticketDTO)
     }
 
     public TicketRead(id: number): Observable<TicketDTO> {
