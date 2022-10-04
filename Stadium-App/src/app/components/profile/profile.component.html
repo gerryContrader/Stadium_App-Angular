@@ -61,18 +61,18 @@
                   <h6 class="text-right">Modifica Profilo</h6>
               </div>
               <div class="row mt-2">
-                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Nome" value={{user.name}}></div>
-                  <div class="col-md-6"><input type="text" class="form-control" value={{user.surname}} placeholder="Cognome"></div>
+                  <div class="col-md-6"><input  name="username" [(ngModel)]="user.username" type="text" class="form-control" placeholder="Nome" value={{user.name}}></div>
+                  <div class="col-md-6"><input name="surname" [(ngModel)]="user.surname" type="text" class="form-control" value={{user.surname}} placeholder="Cognome"></div>
               </div>
               <div class="row mt-3">
-                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value={{user.email}}></div>
-                  <div class="col-md-6"><input type="text" class="form-control" value={{user.phone_number}} placeholder="Telefono"></div>
+                  <div class="col-md-6"><input name="email" [(ngModel)]="user.email" type="text" class="form-control" placeholder="Email" value={{user.email}}></div>
+                  <div class="col-md-6"><input type="text" name="phone_number" [(ngModel)]="user.phone_number" class="form-control" value={{user.phone_number}} placeholder="Telefono"></div>
               </div>
               <div class="row mt-3">
-                  <div class="col-md-6"><input type="text" class="form-control" placeholder="inidirizzo" value={{user.address}}></div>
+                  <div class="col-md-6"><input type="text"name="address" [(ngModel)]="user.address" class="form-control" placeholder="inidirizzo" value={{user.address}}></div>
               </div>
 
-              <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="button">Salva Informazioni</button></div>
+              <div class="mt-5 text-right"><button class="btn btn-primary profile-button" (click)="updateUser(user)" type="button">Salva Informazioni</button></div>
           </div>
       </div>
   </div>
