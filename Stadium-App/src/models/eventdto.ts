@@ -11,6 +11,7 @@ export class EventDTO {
         public stadiumName!: string;
         public maxCapacity!: number;
         public ticket!: TicketDTO
+        public isFavourite!: boolean;
     constructor(
 
     ) {

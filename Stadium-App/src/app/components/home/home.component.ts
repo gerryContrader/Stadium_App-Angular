@@ -50,14 +50,21 @@ export class HomeComponent implements OnInit {
 
       });
     }
+    else if(this.user.usertype==="USER"){
+     this.service.getAllforUser(this.user.id).subscribe(event=>{
+      this.event=event;
+      console.log(event);
+     })
+    }
     else{
-     this.getEvents()
+      this.getEvents();
     }
   }
 
   getEvents() {
     this.service.getAll().subscribe(event => {
       this.event = event
+      console.log(this.event);
     });
   }
 
@@ -87,10 +94,12 @@ export class HomeComponent implements OnInit {
       this.favourite.user = this.x;
       this.service.eventRead(this.event[i].id).subscribe(y=>{
         this.favourite.event = y;
-        this.favouriteService.createFavourite(this.favourite).subscribe();
-        console.log(this.favourite);
+        this.favouriteService.createFavourite(this.favourite).subscribe(()=>{
+          this.router.navigate(["home"]);
         })
-      });
+
+        })
+      })
 
 
   }

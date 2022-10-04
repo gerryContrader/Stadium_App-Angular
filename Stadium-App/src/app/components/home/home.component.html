@@ -47,7 +47,7 @@
         <td *ngIf="role==2"><button *ngIf="event.placesAvailable>0" class="btn btn-danger" (click)="buyTicket(i)">Acquista</button>    <p class="exa mt-2" *ngIf="event.placesAvailable<=0">ESAURITO</p></td>
         <td *ngIf="role!=2"><button class="btn btn-success" [routerLink]="['/edit-event', event.id]">Modifica</button></td>
         <td *ngIf="role!=2"><button class="btn btn-danger" (click)="delete(event)">Elimina</button></td>
-        <td *ngIf="role==2"><button class="btn btn-primary"(click)="addFavourite(i)">Aggiungi</button></td>
+        <td *ngIf="role==2"><button *ngIf="event.favourite==false" class="btn btn-primary"(click)="addFavourite(i)" routerLink='/home'>Aggiungi</button> <p class="exax mt-2" *ngIf="event.favourite==true">GIA' AGGIUNTO</p></td>
       </tr>
     </tbody>
     </table>
