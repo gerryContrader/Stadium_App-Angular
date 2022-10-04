@@ -74,82 +74,84 @@
 
               </div>
 
-              <div class="mt-5 text-right"><button class="btn btn-primary profile-button" (click)="updateUser(user)" type="button">Salva Informazioni</button></div>
+              <div class="my-5 text-right"><button class="btn btn-primary profile-button" (click)="updateUser(user)" type="button">Salva Informazioni</button></div>
           </div>
       </div>
   </div>
+<div *ngIf="role==2">
+  <div class="container mt-5">
+    <h2>I tuoi ultimi ticket</h2>
+    <div *ngFor="let ticket of tickets index as i" >
+    <div *ngIf="i<3" class="row my-3">
+      <div class="col-12 card">
+        <div class="row">
+          <div class="col-12 col-md-4 text-center pt-3 testi">
+            <p>{{ticket.event.eventName}}</p>
+            <p>{{ticket.event.eventDate}}</p>
+          </div>
 
-<div class="container mt-5">
-  <h2>I tuoi ultimi ticket</h2>
-  <div *ngFor="let ticket of tickets index as i" >
-  <div *ngIf="i<3" class="row my-3">
-    <div class="col-12 card">
-      <div class="row">
-        <div class="col-12 col-md-4 text-center pt-3 testi">
-          <p>{{ticket.event.eventName}}</p>
-          <p>{{ticket.event.eventDate}}</p>
-        </div>
+          <div class="col-12 col-md-4 text-center pt-3 testi">
+            <p>{{ticket.event.stadiumName}}</p>
+            <p>Acquisto il : {{ticket.purchaseDate}}</p>
+          </div>
 
-        <div class="col-12 col-md-4 text-center pt-3 testi">
-          <p>{{ticket.event.stadiumName}}</p>
-          <p>Acquisto il : {{ticket.purchaseDate}}</p>
-        </div>
+          <div class="col-12 col-md-4 text-right pt-4 pr-5">
+            <button class="btn btn-danger" (click)="deleteTicket(ticket)">Elimina</button>
+          </div>
 
-        <div class="col-12 col-md-4 text-right pt-4 pr-5">
-          <button class="btn btn-danger" (click)="deleteTicket(ticket)">Elimina</button>
         </div>
+      </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 text-right pt-4 pr-5">
+
+      </div>
+      <div class="col-12 col-md-4 text-center pt-4 pr-5">
+        <a class="btn blub" [routerLink]="['/ticket']">Mostra altro</a>
+      </div>
+      <div class="col-12 col-md-4 text-right pt-4 pr-5">
 
       </div>
     </div>
 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-4 text-right pt-4 pr-5">
-
-    </div>
-    <div class="col-12 col-md-4 text-center pt-4 pr-5">
-      <a class="btn blub" [routerLink]="['/ticket']">Mostra altro</a>
-    </div>
-    <div class="col-12 col-md-4 text-right pt-4 pr-5">
-
-    </div>
   </div>
 
-</div>
+  <div class="container mt-5">
+    <h2 class="text-right mt-5">I tuoi preferiti</h2>
+    <div *ngFor="let favourite of favourites index as i" >
+    <div *ngIf="i<3" class="row my-3">
+      <div class="col-12 card">
+        <div class="row">
+          <div class="col-12 col-md-4 text-center pt-3 testi">
+            <p>{{favourite.event.eventName}}</p>
+            <p>{{favourite.event.eventDate}}</p>
+          </div>
 
-<div class="container mt-5">
-  <h2 class="text-right mt-5">I tuoi preferiti</h2>
-  <div *ngFor="let favourite of favourites index as i" >
-  <div *ngIf="i<3" class="row my-3">
-    <div class="col-12 card">
-      <div class="row">
-        <div class="col-12 col-md-4 text-center pt-3 testi">
-          <p>{{favourite.event.eventName}}</p>
-          <p>{{favourite.event.eventDate}}</p>
-        </div>
+          <div class="col-12 col-md-4 text-center pt-3 testi">
+            <p class="pt-4">{{favourite.event.stadiumName}}</p>
+          </div>
 
-        <div class="col-12 col-md-4 text-center pt-3 testi">
-          <p class="pt-4">{{favourite.event.stadiumName}}</p>
-        </div>
-
-        <div class="col-12 col-md-4 text-right pt-4 pr-5">
-          <button class="btn btn-danger" (click)="deleteFavourite(favourite)">Elimina</button>
+          <div class="col-12 col-md-4 text-right pt-4 pr-5">
+            <button class="btn btn-danger" (click)="deleteFavourite(favourite)">Elimina</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-4 text-right pt-4 pr-5">
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4 text-right pt-4 pr-5">
 
-    </div>
-    <div class="col-12 col-md-4 text-center pt-4 pr-5">
-      <a href="#" class="btn blub mb-5" [routerLink]="['/favourite', user.id]">Mostra altro</a>
-    </div>
-    <div class="col-12 col-md-4 text-right pt-4 pr-5">
+      </div>
+      <div class="col-12 col-md-4 text-center pt-4 pr-5">
+        <a href="#" class="btn blub mb-5" [routerLink]="['/favourite', user.id]">Mostra altro</a>
+      </div>
+      <div class="col-12 col-md-4 text-right pt-4 pr-5">
 
+      </div>
     </div>
   </div>
+
 </div>
 <app-footer></app-footer>

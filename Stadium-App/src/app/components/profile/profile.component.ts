@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
   ciao:String = "ciao"
   public tickets!: TicketDTO[];
   public favourites!: FavouriteDTO[];
+  public role!:number;
 
   public users: UserDTO = new UserDTO();
   constructor(public service: UserService, public favouriteService:FavouriteService, public ticketService:TicketService, private router: Router, private actRoute: ActivatedRoute,private http: HttpClient) { }
@@ -25,7 +26,12 @@ export class ProfileComponent implements OnInit {
   fileToUpload: Blob | null = null;
   fileName = '';
   ngOnInit(): void {
+
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
+
+    if(this.user.usertype==="user"){
+      this.role==2;
+    }
     this.ticketService.getAllByUserId(this.user.id).subscribe(x => {
 
       this.tickets = x;
