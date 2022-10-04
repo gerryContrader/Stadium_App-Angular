@@ -29,8 +29,8 @@ export class ProfileComponent implements OnInit {
 
     this.user = JSON.parse(localStorage.getItem('currentUser') as string);
 
-    if(this.user.usertype==="user"){
-      this.role==2;
+    if(this.user.usertype=="USER"){
+      this.role=2;
     }
     this.ticketService.getAllByUserId(this.user.id).subscribe(x => {
 
@@ -39,15 +39,6 @@ export class ProfileComponent implements OnInit {
     });
     this.favouriteService.getAllByUserId(this.user.id).subscribe(x =>{
       this.favourites = x;
-    })
-  }
-
-  addImage(userDTO:UserDTO){
-    this.service.editUser(this.user).subscribe(() => {
-    this.service.read(userDTO.id)
-
-
-
     })
   }
 
@@ -75,6 +66,7 @@ export class ProfileComponent implements OnInit {
     this.service.editUser(this.user).subscribe(() => {
       this.service.read(user.id)
       localStorage.setItem('currentUser', JSON.stringify(this.user));
+      console.log(user.usertype);
     })
   }
 
