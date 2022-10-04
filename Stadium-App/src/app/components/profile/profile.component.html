@@ -70,7 +70,7 @@
               </div>
               <div class="row mt-3">
                   <div class="col-md-6"><input type="text"name="address" [(ngModel)]="user.address" class="form-control" placeholder="inidirizzo" value={{user.address}}></div>
-                  <div class="col-md-6"><input type="text" id="img" name="img" accept="image/png, image/jpeg, image/svg" class="form-control" [(ngModel)]="user.propic" #fileUpload><button (click)="addImage(user)">save</button></div>
+                  <div class="col-md-6"><input type="text" id="img" name="img" accept="image/png, image/jpeg, image/svg" class="form-control" placeholder="Inserisci url immagine" [(ngModel)]="user.propic" #fileUpload></div>
 
               </div>
 
